@@ -113,7 +113,7 @@
                     untuk membangun aplikasi web berkualitas.</p>
             </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-8">
 
                 <div class="p-8 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:backdrop-blur-sm dark:border dark:border-gray-800 group hover:-translate-y-2"
                     data-aos="fade-up">
@@ -160,6 +160,22 @@
                     </p>
                 </div>
 
+                    <!-- Keahlian ke-4 -->
+    <div class="p-8 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:backdrop-blur-sm dark:border dark:border-gray-800 group hover:-translate-y-2"
+        data-aos="fade-up" data-aos-delay="450">
+        <div
+            class="w-14 h-14 bg-yellow-50 dark:bg-yellow-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i data-feather="cpu" class="w-7 h-7 text-yellow-600 dark:text-yellow-400"></i>
+        </div>
+        <h3
+            class="text-xl font-bold group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors">
+            AI Trouble Solving</h3>
+        <p class="text-gray-600 mt-3 text-sm leading-relaxed dark:text-gray-400">
+            Menggunakan AI untuk analisis masalah, optimasi workflow, dan penyelesaian masalah kompleks
+            dengan pendekatan cerdas.
+        </p>
+    </div>
+
             </div>
         </section>
 
@@ -198,7 +214,7 @@
                             Employed</span>
                     </div>
                     <p class="text-gray-500 dark:text-gray-400 text-sm mb-4 flex items-center gap-2">
-                        <i data-feather="calendar" class="w-4 h-4"></i> 2024 – Sekarang
+                        <i data-feather="calendar" class="w-4 h-4"></i> Mei 2025 – Sekarang
                     </p>
                     <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
                         Menyediakan jasa pembuatan website undangan digital dan landing page untuk UMKM. Fokus pada
@@ -245,11 +261,13 @@
                         </p>
                         <div class="flex flex-wrap gap-2">
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Laravel</span>
+                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Nuxt</span>
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Bootstrap</span>
+                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Vue</span>
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">MySQL</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Github</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Rest API</span>
                         </div>
                     </div>
                 </div>
@@ -277,10 +295,11 @@
                         <div class="flex flex-wrap gap-2">
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">HTML</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">JavaScript</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Laravel Blade</span>
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Tailwind</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">AOS</span>
                         </div>
                     </div>
                 </div>
@@ -307,15 +326,43 @@
                         </p>
                         <div class="flex flex-wrap gap-2">
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">React</span>
+                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">WordPress</span>
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Firebase</span>
+                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Hostinger</span>
+                        </div>
+                    </div>
+                </div>
+
+                                <div class="group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative overflow-hidden h-56">
+                        <img src="https://dummyimage.com/600x400/e5e5e5/000"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="#"
+                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Lihat
+                                Detail</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3
+                            class="text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Landing Page Dental Care</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">
+                            Platform pembuatan undangan digital berbasis web dengan berbagai pilihan tema dan fitur
+                            RSVP.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">HTML</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">JavaScript</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Laravel Blade</span>
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Tailwind</span>
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <div class="mt-10 text-center md:hidden">
