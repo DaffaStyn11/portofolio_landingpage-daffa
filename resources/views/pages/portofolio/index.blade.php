@@ -471,8 +471,12 @@
                 <div
                     class="project-item project-hidden hidden opacity-0 group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800">
                     <div class="relative overflow-hidden h-56">
-                        <img src="https://dummyimage.com/600x400/e5e5e5/000"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        {{-- <img src="https://dummyimage.com/600x400/e5e5e5/000"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"> --}}
+                            <img
+            src="{{ asset('images/projects/Dokter Mata.png') }}"
+            alt="Dokter Mata"
+            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                         <div
                             class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                             <a href="#"
@@ -616,86 +620,9 @@
             </div>
 
             <!-- JavaScript for Toggle Functionality -->
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    const toggleBtn = document.getElementById('toggleProjectsBtn');
-                    const btnText = document.getElementById('btnText');
-                    const btnIcon = document.getElementById('btnIcon');
-                    const hiddenProjects = document.querySelectorAll('.project-hidden');
-                    let isExpanded = false;
 
-                    toggleBtn.addEventListener('click', function() {
-                        isExpanded = !isExpanded;
+            @include('components.style')
 
-                        if (isExpanded) {
-                            // Show all projects
-                            hiddenProjects.forEach((project, index) => {
-                                setTimeout(() => {
-                                    project.classList.remove('hidden');
-                                    // Trigger reflow
-                                    void project.offsetWidth;
-                                    project.classList.remove('opacity-0');
-                                    project.classList.add('opacity-100');
-                                }, index * 100); // Stagger animation
-                            });
-
-                            // Update button
-                            btnText.textContent = 'Tampilkan Sedikit';
-                            btnIcon.setAttribute('data-feather', 'chevron-up');
-                            feather.replace();
-                        } else {
-                            // Hide projects
-                            hiddenProjects.forEach((project) => {
-                                project.classList.remove('opacity-100');
-                                project.classList.add('opacity-0');
-                            });
-
-                            // Wait for fade out animation before hiding
-                            setTimeout(() => {
-                                hiddenProjects.forEach((project) => {
-                                    project.classList.add('hidden');
-                                });
-
-                                // Smooth scroll to projects section
-                                document.getElementById('projects').scrollIntoView({
-                                    behavior: 'smooth',
-                                    block: 'start'
-                                });
-                            }, 300);
-
-                            // Update button
-                            btnText.textContent = 'Lihat Semua';
-                            btnIcon.setAttribute('data-feather', 'chevron-down');
-                            feather.replace();
-                        }
-
-                        // Rotate icon
-                        btnIcon.style.transform = isExpanded ? 'rotate(180deg)' : 'rotate(0deg)';
-                    });
-                });
-            </script>
-
-            <style>
-                .project-item {
-                    transition: opacity 0.5s ease-in-out, transform 0.3s ease;
-                }
-
-                .project-hidden.opacity-100 {
-                    animation: fadeInUp 0.5s ease-out forwards;
-                }
-
-                @keyframes fadeInUp {
-                    from {
-                        opacity: 0;
-                        transform: translateY(20px);
-                    }
-
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-            </style>
         </section>
 
         <!-- CERTIFICATE -->

@@ -90,29 +90,87 @@
         });
 
         // LOAD MORE PROJECTS
-        document.addEventListener('DOMContentLoaded', function() {
-            const loadMoreBtns = document.querySelectorAll('.load-more-trigger');
-            const hiddenProjects = document.querySelectorAll('.project-hidden');
+        // document.addEventListener('DOMContentLoaded', function() {
+        //     const loadMoreBtns = document.querySelectorAll('.load-more-trigger');
+        //     const hiddenProjects = document.querySelectorAll('.project-hidden');
 
-            loadMoreBtns.forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    hiddenProjects.forEach(project => {
-                        project.classList.remove('hidden');
+        //     loadMoreBtns.forEach(btn => {
+        //         btn.addEventListener('click', function(e) {
+        //             e.preventDefault();
+        //             hiddenProjects.forEach(project => {
+        //                 project.classList.remove('hidden');
+        //             });
+        //             // Hide the buttons after expanding
+        //             loadMoreBtns.forEach(b => b.style.display = 'none');
+
+        //             // Re-initialize Feather icons for new content if needed (though these are just hidden, so they should be fine)
+        //             if (typeof feather !== 'undefined') {
+        //                 feather.replace();
+        //             }
+
+        //             // Refresh AOS if available
+        //             if (typeof AOS !== 'undefined') {
+        //                 AOS.refresh();
+        //             }
+        //         });
+        //     });
+        // });
+
+        // TOGGLE SHOW MORE/LESS PROJECTS
+                        document.addEventListener('DOMContentLoaded', function() {
+                    const toggleBtn = document.getElementById('toggleProjectsBtn');
+                    const btnText = document.getElementById('btnText');
+                    const btnIcon = document.getElementById('btnIcon');
+                    const hiddenProjects = document.querySelectorAll('.project-hidden');
+                    let isExpanded = false;
+
+                    toggleBtn.addEventListener('click', function() {
+                        isExpanded = !isExpanded;
+
+                        if (isExpanded) {
+                            // Show all projects
+                            hiddenProjects.forEach((project, index) => {
+                                setTimeout(() => {
+                                    project.classList.remove('hidden');
+                                    // Trigger reflow
+                                    void project.offsetWidth;
+                                    project.classList.remove('opacity-0');
+                                    project.classList.add('opacity-100');
+                                }, index * 100); // Stagger animation
+                            });
+
+                            // Update button
+                            btnText.textContent = 'Tampilkan Sedikit';
+                            btnIcon.setAttribute('data-feather', 'chevron-up');
+                            feather.replace();
+                        } else {
+                            // Hide projects
+                            hiddenProjects.forEach((project) => {
+                                project.classList.remove('opacity-100');
+                                project.classList.add('opacity-0');
+                            });
+
+                            // Wait for fade out animation before hiding
+                            setTimeout(() => {
+                                hiddenProjects.forEach((project) => {
+                                    project.classList.add('hidden');
+                                });
+
+                                // Smooth scroll to projects section
+                                document.getElementById('projects').scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }, 300);
+
+                            // Update button
+                            btnText.textContent = 'Lihat Semua';
+                            btnIcon.setAttribute('data-feather', 'chevron-down');
+                            feather.replace();
+                        }
+
+                        // Rotate icon
+                        btnIcon.style.transform = isExpanded ? 'rotate(180deg)' : 'rotate(0deg)';
                     });
-                    // Hide the buttons after expanding
-                    loadMoreBtns.forEach(b => b.style.display = 'none');
-
-                    // Re-initialize Feather icons for new content if needed (though these are just hidden, so they should be fine)
-                    if (typeof feather !== 'undefined') {
-                        feather.replace();
-                    }
-
-                    // Refresh AOS if available
-                    if (typeof AOS !== 'undefined') {
-                        AOS.refresh();
-                    }
                 });
-            });
-        });
     </script>
