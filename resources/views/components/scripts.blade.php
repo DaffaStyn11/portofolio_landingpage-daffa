@@ -88,4 +88,31 @@
             once: true,
             duration: 800
         });
+
+        // LOAD MORE PROJECTS
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadMoreBtns = document.querySelectorAll('.load-more-trigger');
+            const hiddenProjects = document.querySelectorAll('.project-hidden');
+
+            loadMoreBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    hiddenProjects.forEach(project => {
+                        project.classList.remove('hidden');
+                    });
+                    // Hide the buttons after expanding
+                    loadMoreBtns.forEach(b => b.style.display = 'none');
+
+                    // Re-initialize Feather icons for new content if needed (though these are just hidden, so they should be fine)
+                    if (typeof feather !== 'undefined') {
+                        feather.replace();
+                    }
+
+                    // Refresh AOS if available
+                    if (typeof AOS !== 'undefined') {
+                        AOS.refresh();
+                    }
+                });
+            });
+        });
     </script>
