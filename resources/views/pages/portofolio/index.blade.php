@@ -296,14 +296,15 @@
                     <h2 class="text-3xl font-bold mb-2">Project Terbaru</h2>
                     <p class="text-gray-600 dark:text-gray-400">Beberapa hasil karya terbaik saya.</p>
                 </div>
-                <button
-                    class="load-more-trigger hidden md:flex items-center gap-2 text-blue-600 dark:text-blue-400 font-medium hover:underline">Lihat
-                    Semua <i data-feather="arrow-right" class="w-4 h-4"></i></button>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800"
+
+            <!-- Projects Grid -->
+            <div id="projectsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-item group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800"
                     data-aos="fade-up">
-                    <div class="relative overflow-hidden h-56"> <img src="https://dummyimage.com/600x400/e5e5e5/000"
+                    <div class="relative overflow-hidden h-56">
+                        <img src="https://dummyimage.com/600x400/e5e5e5/000"
                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                         <div
                             class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -316,9 +317,10 @@
                         <h3
                             class="text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                             Sistem Permohonan Cuti</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2"> Aplikasi web untuk manajemen
-                            cuti pegawai dengan fitur approval berjenjang dan notifikasi realtime. </p>
-                        <div class="flex flex-wrap gap-2"> <span
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Aplikasi web untuk manajemen
+                            cuti pegawai dengan fitur approval berjenjang dan notifikasi realtime.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Nuxt</span>
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Vue</span>
@@ -328,7 +330,8 @@
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Github</span>
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Rest
-                                API</span> <span
+                                API</span>
+                            <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">PHP</span>
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Laravel
@@ -336,9 +339,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800"
+
+                <!-- Project 2 -->
+                <div class="project-item group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800"
                     data-aos="fade-up" data-aos-delay="150">
-                    <div class="relative overflow-hidden h-56"> <img src="https://dummyimage.com/600x400/e5e5e5/000"
+                    <div class="relative overflow-hidden h-56">
+                        <img src="https://dummyimage.com/600x400/e5e5e5/000"
                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                         <div
                             class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -351,22 +357,27 @@
                         <h3
                             class="text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                             Landing Page Coffee</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2"> Desain landing page modern
-                            untuk kedai kopi dengan tema dark mode yang elegan dan animasi interaktif. </p>
-                        <div class="flex flex-wrap gap-2"> <span
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Desain landing page modern
+                            untuk kedai kopi dengan tema dark mode yang elegan dan animasi interaktif.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">HTML</span>
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">JavaScript</span>
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Laravel
-                                Blade</span> <span
+                                Blade</span>
+                            <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Tailwind</span>
                         </div>
                     </div>
                 </div>
-                <div class="group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800"
+
+                <!-- Project 3 -->
+                <div class="project-item group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800"
                     data-aos="fade-up" data-aos-delay="300">
-                    <div class="relative overflow-hidden h-56"> <img src="https://dummyimage.com/600x400/e5e5e5/000"
+                    <div class="relative overflow-hidden h-56">
+                        <img src="https://dummyimage.com/600x400/e5e5e5/000"
                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                         <div
                             class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -379,18 +390,22 @@
                         <h3
                             class="text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                             Web Undangan Digital</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2"> Platform pembuatan undangan
-                            digital berbasis web dengan berbagai pilihan tema dan fitur RSVP. </p>
-                        <div class="flex flex-wrap gap-2"> <span
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Platform pembuatan undangan
+                            digital berbasis web dengan berbagai pilihan tema dan fitur RSVP.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">WordPress</span>
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Hostinger</span>
                         </div>
                     </div>
                 </div>
-                <div class="hidden project-hidden group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800"
-                    data-aos="fade-up" data-aos-delay="300">
-                    <div class="relative overflow-hidden h-56"> <img src="https://dummyimage.com/600x400/e5e5e5/000"
+
+                <!-- Project 4 - Hidden by default -->
+                <div
+                    class="project-item project-hidden hidden opacity-0 group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800">
+                    <div class="relative overflow-hidden h-56">
+                        <img src="https://dummyimage.com/600x400/e5e5e5/000"
                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                         <div
                             class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -403,22 +418,27 @@
                         <h3
                             class="text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                             Landing Page Dental Care</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2"> Landing page profesional
-                            untuk klinik gigi dengan fokus pada layanan, kepercayaan, dan tampilan modern yang bersih. </p>
-                        <div class="flex flex-wrap gap-2"> <span
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Landing page profesional
+                            untuk klinik gigi dengan fokus pada layanan, kepercayaan, dan tampilan modern yang bersih.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">HTML</span>
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">JavaScript</span>
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Laravel
-                                Blade</span> <span
+                                Blade</span>
+                            <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Tailwind</span>
                         </div>
                     </div>
                 </div>
-                <div class="hidden project-hidden group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800"
-                    data-aos="fade-up" data-aos-delay="300">
-                    <div class="relative overflow-hidden h-56"> <img src="https://dummyimage.com/600x400/e5e5e5/000"
+
+                <!-- Project 5 - Hidden by default -->
+                <div
+                    class="project-item project-hidden hidden opacity-0 group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800">
+                    <div class="relative overflow-hidden h-56">
+                        <img src="https://dummyimage.com/600x400/e5e5e5/000"
                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                         <div
                             class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -431,22 +451,27 @@
                         <h3
                             class="text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                             Landing Page Restaurant</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2"> Halaman promosi restoran
-                            dengan nuansa elegan, menampilkan menu utama dan pengalaman makan yang menarik. </p>
-                        <div class="flex flex-wrap gap-2"> <span
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Halaman promosi restoran
+                            dengan nuansa elegan, menampilkan menu utama dan pengalaman makan yang menarik.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">HTML</span>
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">JavaScript</span>
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Laravel
-                                Blade</span> <span
+                                Blade</span>
+                            <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Tailwind</span>
                         </div>
                     </div>
                 </div>
-                <div class="hidden project-hidden group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800"
-                    data-aos="fade-up" data-aos-delay="300">
-                    <div class="relative overflow-hidden h-56"> <img src="https://dummyimage.com/600x400/e5e5e5/000"
+
+                <!-- Project 6 - Hidden by default -->
+                <div
+                    class="project-item project-hidden hidden opacity-0 group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800">
+                    <div class="relative overflow-hidden h-56">
+                        <img src="https://dummyimage.com/600x400/e5e5e5/000"
                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                         <div
                             class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -459,23 +484,28 @@
                         <h3
                             class="text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                             Landing Page Eyes Care</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2"> Desain landing page untuk
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Desain landing page untuk
                             klinik perawatan mata yang menonjolkan layanan kesehatan visual secara informatif dan modern.
                         </p>
-                        <div class="flex flex-wrap gap-2"> <span
+                        <div class="flex flex-wrap gap-2">
+                            <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">HTML</span>
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">JavaScript</span>
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Laravel
-                                Blade</span> <span
+                                Blade</span>
+                            <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Tailwind</span>
                         </div>
                     </div>
                 </div>
-                <div class="hidden project-hidden group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800"
-                    data-aos="fade-up" data-aos-delay="300">
-                    <div class="relative overflow-hidden h-56"> <img src="https://dummyimage.com/600x400/e5e5e5/000"
+
+                <!-- Project 7 - Hidden by default -->
+                <div
+                    class="project-item project-hidden hidden opacity-0 group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800">
+                    <div class="relative overflow-hidden h-56">
+                        <img src="https://dummyimage.com/600x400/e5e5e5/000"
                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                         <div
                             class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -488,15 +518,17 @@
                         <h3
                             class="text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                             Managemen Telur</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2"> manajemen produksi telur
-                            yang memudahkan pencatatan penjualan, pengeluaran, serta laporan pembukuan otomatis. </p>
-                        <div class="flex flex-wrap gap-2"> <span
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Manajemen produksi telur
+                            yang memudahkan pencatatan penjualan, pengeluaran, serta laporan pembukuan otomatis.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">HTML</span>
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">JavaScript</span>
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Laravel
-                                Blade</span> <span
+                                Blade</span>
+                            <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Tailwind</span>
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">PHP</span>
@@ -506,9 +538,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="hidden project-hidden group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800"
-                    data-aos="fade-up" data-aos-delay="300">
-                    <div class="relative overflow-hidden h-56"> <img src="https://dummyimage.com/600x400/e5e5e5/000"
+
+                <!-- Project 8 - Hidden by default -->
+                <div
+                    class="project-item project-hidden hidden opacity-0 group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800">
+                    <div class="relative overflow-hidden h-56">
+                        <img src="https://dummyimage.com/600x400/e5e5e5/000"
                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                         <div
                             class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -521,22 +556,27 @@
                         <h3
                             class="text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                             Landing Page Real Estate</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2"> Platform bisnis properti
-                            dengan tampilan premium dan informasi lokasi secara menarik. </p>
-                        <div class="flex flex-wrap gap-2"> <span
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Platform bisnis properti
+                            dengan tampilan premium dan informasi lokasi secara menarik.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">HTML</span>
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">JavaScript</span>
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Laravel
-                                Blade</span> <span
+                                Blade</span>
+                            <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Tailwind</span>
                         </div>
                     </div>
                 </div>
-                <div class="hidden project-hidden group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800"
-                    data-aos="fade-up" data-aos-delay="300">
-                    <div class="relative overflow-hidden h-56"> <img src="https://dummyimage.com/600x400/e5e5e5/000"
+
+                <!-- Project 9 - Hidden by default -->
+                <div
+                    class="project-item project-hidden hidden opacity-0 group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800">
+                    <div class="relative overflow-hidden h-56">
+                        <img src="https://dummyimage.com/600x400/e5e5e5/000"
                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                         <div
                             class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -548,24 +588,114 @@
                     <div class="p-6">
                         <h3
                             class="text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                            Landing Page Portofolio </h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2"> Platform modern untuk
-                            menampilkan profil, pengalaman, dan pencapaian secara profesional. </p>
-                        <div class="flex flex-wrap gap-2"> <span
+                            Landing Page Portofolio</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Platform modern untuk
+                            menampilkan profil, pengalaman, dan pencapaian secara profesional.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">HTML</span>
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">JavaScript</span>
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Laravel
-                                Blade</span> <span
+                                Blade</span>
+                            <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Tailwind</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="mt-10 text-center md:hidden"> <a href="#"
-                    class="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-medium hover:underline">Lihat
-                    Semua Project <i data-feather="arrow-right" class="w-4 h-4"></i></a> </div>
+
+            <!-- Toggle Button -->
+            <div class="mt-12 text-center">
+                <button id="toggleProjectsBtn"
+                    class="group inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                    <span id="btnText">Lihat Semua</span>
+                    <i data-feather="chevron-down" id="btnIcon" class="w-5 h-5 transition-transform duration-300"></i>
+                </button>
+            </div>
+
+            <!-- JavaScript for Toggle Functionality -->
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const toggleBtn = document.getElementById('toggleProjectsBtn');
+                    const btnText = document.getElementById('btnText');
+                    const btnIcon = document.getElementById('btnIcon');
+                    const hiddenProjects = document.querySelectorAll('.project-hidden');
+                    let isExpanded = false;
+
+                    toggleBtn.addEventListener('click', function() {
+                        isExpanded = !isExpanded;
+
+                        if (isExpanded) {
+                            // Show all projects
+                            hiddenProjects.forEach((project, index) => {
+                                setTimeout(() => {
+                                    project.classList.remove('hidden');
+                                    // Trigger reflow
+                                    void project.offsetWidth;
+                                    project.classList.remove('opacity-0');
+                                    project.classList.add('opacity-100');
+                                }, index * 100); // Stagger animation
+                            });
+
+                            // Update button
+                            btnText.textContent = 'Tampilkan Sedikit';
+                            btnIcon.setAttribute('data-feather', 'chevron-up');
+                            feather.replace();
+                        } else {
+                            // Hide projects
+                            hiddenProjects.forEach((project) => {
+                                project.classList.remove('opacity-100');
+                                project.classList.add('opacity-0');
+                            });
+
+                            // Wait for fade out animation before hiding
+                            setTimeout(() => {
+                                hiddenProjects.forEach((project) => {
+                                    project.classList.add('hidden');
+                                });
+
+                                // Smooth scroll to projects section
+                                document.getElementById('projects').scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }, 300);
+
+                            // Update button
+                            btnText.textContent = 'Lihat Semua';
+                            btnIcon.setAttribute('data-feather', 'chevron-down');
+                            feather.replace();
+                        }
+
+                        // Rotate icon
+                        btnIcon.style.transform = isExpanded ? 'rotate(180deg)' : 'rotate(0deg)';
+                    });
+                });
+            </script>
+
+            <style>
+                .project-item {
+                    transition: opacity 0.5s ease-in-out, transform 0.3s ease;
+                }
+
+                .project-hidden.opacity-100 {
+                    animation: fadeInUp 0.5s ease-out forwards;
+                }
+
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            </style>
         </section>
 
         <!-- CERTIFICATE -->
