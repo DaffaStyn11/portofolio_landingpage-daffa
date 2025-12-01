@@ -1,169 +1,8 @@
-<!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daffa – Portfolio</title>
-
-    <!-- TAILWIND CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        dark: {
-                            bg: '#0a0a0a',
-                            card: '#171717',
-                            border: '#262626'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- FEATHER ICONS -->
-    <script src="https://unpkg.com/feather-icons"></script>
-
-    <!-- AOS ANIMATION -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <style>
-        body,
-        header,
-        section,
-        div,
-        p,
-        h1,
-        h2,
-        h3,
-        a,
-        button,
-        input,
-        textarea,
-        i {
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        .dark ::-webkit-scrollbar-track {
-            background: #0f172a;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 5px;
-        }
-
-        .dark ::-webkit-scrollbar-thumb {
-            background: #334155;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
-
-        .dark ::-webkit-scrollbar-thumb:hover {
-            background: #475569;
-        }
-
-        #preloader {
-            position: fixed;
-            inset: 0;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-        }
-
-        .dark #preloader {
-            background: #0a0a0a;
-        }
-
-        .pulse {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: #2563eb;
-            animation: pulse 1s infinite alternate ease-in-out;
-        }
-
-        @keyframes pulse {
-            from {
-                transform: scale(0.7);
-                opacity: .6;
-            }
-
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        #toTop {
-            position: fixed;
-            bottom: 30px;
-            right: 25px;
-            padding: 12px;
-            background: #2563eb;
-            border-radius: 50%;
-            display: none;
-            z-index: 60;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-        }
-
-        #toTop:hover {
-            transform: translateY(-3px);
-        }
-
-        .mobile-menu-open {
-            animation: slideDown .3s ease forwards;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .gradient-text {
-            background: linear-gradient(90deg, #2563eb, #00d4ff);
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-
-        .tilt-card:hover {
-            transform: translateY(-6px) scale(1.02);
-            transition: .3s ease;
-        }
-    </style>
-</head>
-
-<body
-    class="bg-gray-50 text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100 selection:bg-blue-500 selection:text-white overflow-x-hidden">
-
+@extends('layouts.app')
+@section('content')
     <!-- Background Gradient Blobs -->
     <div class="fixed inset-0 -z-10 pointer-events-none overflow-hidden hidden dark:block">
-        <div
-            class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] opacity-50">
+        <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] opacity-50">
         </div>
         <div
             class="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] opacity-50">
@@ -176,56 +15,13 @@
     </div>
 
     <!-- HEADER -->
-    <header
-        class="bg-white/80 dark:bg-gray-950/70 backdrop-blur-lg border-b border-gray-200/50 dark:border-gray-800/50 fixed top-0 left-0 w-full z-50 transition-all duration-300">
-        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <h1
-                class="text-xl font-bold tracking-wide bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-                Daffa Setya Nugraha</h1>
-            <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
-                <li><a href="#hero"
-                        class="nav-link hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a></li>
-                <li><a href="#about"
-                        class="nav-link hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a></li>
-                <li><a href="#skills"
-                        class="nav-link hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a></li>
-                <li><a href="#projects"
-                        class="nav-link hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a>
-                </li>
-                <li><a href="#contact"
-                        class="nav-link hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a></li>
-            </ul>
-            <div class="flex items-center gap-4">
-                <button id="themeToggle"
-                    class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-600 dark:text-gray-400">
-                    <i id="themeIcon" data-feather="moon" class="w-5 h-5"></i>
-                </button>
-                <button id="menuBtn" class="md:hidden p-2 text-gray-600 dark:text-gray-400">
-                    <i data-feather="menu" class="w-6 h-6"></i>
-                </button>
-            </div>
-        </nav>
-
-        <!-- MOBILE NAV -->
-        <div id="mobileMenu"
-            class="hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-t dark:border-gray-800 shadow-lg md:hidden">
-            <ul class="flex flex-col py-4 px-6 space-y-4 font-medium">
-                <li><a href="#hero" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400">Home</a></li>
-                <li><a href="#about" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400">About</a></li>
-                <li><a href="#skills" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400">Skills</a></li>
-                <li><a href="#projects" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
-                </li>
-                <li><a href="#contact" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400">Contact</a></li>
-            </ul>
-        </div>
-    </header>
+    @include('components.header')
 
     <!-- MAIN CONTENT -->
     <main class="pt-28">
 
         <!-- HERO -->
-        <section id="hero"
-            class="max-w-7xl mx-auto px-6 py-32 grid lg:grid-cols-2 gap-12 items-center min-h-[90vh]">
+        <section id="hero" class="max-w-7xl mx-auto px-6 py-32 grid lg:grid-cols-2 gap-12 items-center min-h-[90vh]">
             <div data-aos="fade-up">
                 <div class="absolute top-0 left-0 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl -z-10 animate-pulse">
                 </div>
@@ -260,11 +56,11 @@
                 </div>
 
                 <div class="mt-12 flex gap-6 text-gray-500 dark:text-gray-400">
-                    <a href="#" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"><i
+                    <a href="https://github.com/DaffaStyn11" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"><i
                             data-feather="github"></i></a>
-                    <a href="#" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"><i
+                    <a href="https://www.linkedin.com/in/daffa-setya-nugraha/" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"><i
                             data-feather="linkedin"></i></a>
-                    <a href="#" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"><i
+                    <a href="https://www.instagram.com/daffastyn/" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"><i
                             data-feather="instagram"></i></a>
                 </div>
             </div>
@@ -548,8 +344,7 @@
 
                 <div class="p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:border dark:border-gray-800 flex items-center gap-4"
                     data-aos="fade-up" data-aos-delay="150">
-                    <div
-                        class="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-lg text-purple-600 dark:text-purple-400">
+                    <div class="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-lg text-purple-600 dark:text-purple-400">
                         <i data-feather="award" class="w-6 h-6"></i>
                     </div>
                     <div>
@@ -583,7 +378,7 @@
             <div class="flex flex-wrap justify-center gap-6">
 
                 <!-- Email -->
-                <a href="mailto:emailkamu@gmail.com"
+                <a href="mailto:daffasetyan@gmail.com"
                     class="group flex items-center gap-4 px-8 py-5 bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                     data-aos="fade-up" data-aos-delay="0">
                     <div
@@ -597,7 +392,7 @@
                 </a>
 
                 <!-- LinkedIn -->
-                <a href="https://linkedin.com/in/username" target="_blank"
+                <a href="https://www.linkedin.com/in/daffa-setya-nugraha/" target="_blank"
                     class="group flex items-center gap-4 px-8 py-5 bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                     data-aos="fade-up" data-aos-delay="100">
                     <div
@@ -611,7 +406,7 @@
                 </a>
 
                 <!-- Instagram -->
-                <a href="https://instagram.com/username" target="_blank"
+                <a href="https://www.instagram.com/daffastyn/" target="_blank"
                     class="group flex items-center gap-4 px-8 py-5 bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                     data-aos="fade-up" data-aos-delay="200">
                     <div
@@ -623,6 +418,20 @@
                         <p class="text-sm text-gray-500 dark:text-gray-400">Daily Update</p>
                     </div>
                 </a>
+
+                <a href="https://github.com/DaffaStyn11" target="_blank"
+                    class="group flex items-center gap-4 px-8 py-5 bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <div
+                        class="p-3 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white rounded-xl group-hover:scale-110 transition-transform duration-300">
+                        <i data-feather="github" class="w-6 h-6"></i>
+                    </div>
+                    <div class="text-left">
+                        <h3 class="font-bold text-gray-800 dark:text-gray-100 text-lg">GitHub</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Lihat Repositori</p>
+                    </div>
+                </a>
+
 
             </div>
         </section>
@@ -643,14 +452,14 @@
                                 class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400">
                                 <i data-feather="mail" class="w-5 h-5"></i>
                             </div>
-                            <span>emailkamu@gmail.com</span>
+                            <span>daffasetyan@gmail.com</span>
                         </div>
                         <div class="flex items-center gap-4 text-gray-700 dark:text-gray-300">
                             <div
                                 class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400">
                                 <i data-feather="map-pin" class="w-5 h-5"></i>
                             </div>
-                            <span>Mojokerto, Jawa Timur</span>
+                            <span>Kota Madiun, Jawa Timur</span>
                         </div>
                     </div>
                 </div>
@@ -689,107 +498,12 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="mt-20 py-10 bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800 text-center">
-        <p class="text-sm text-gray-600 dark:text-gray-400">© 2025 Daffa Setya Nugraha. All rights reserved.</p>
-    </footer>
+    @include('components.footer')
 
     <!-- SCROLL TO TOP -->
     <button id="toTop" class="hover:bg-blue-700 transition-colors"><i data-feather="arrow-up"
             class="text-white"></i></button>
 
     <!-- SCRIPTS -->
-    <script>
-        // PRELOADER
-        window.addEventListener("load", () => {
-            const preloader = document.getElementById("preloader");
-            preloader.style.opacity = "0";
-            preloader.style.transition = "opacity 0.5s ease";
-            setTimeout(() => {
-                preloader.style.display = "none";
-            }, 500);
-        });
-
-        // Dark mode init
-        (function() {
-            const html = document.documentElement;
-            if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia(
-                    "(prefers-color-scheme: dark)").matches)) {
-                html.classList.add("dark");
-            } else {
-                html.classList.remove("dark");
-            }
-        })();
-
-        feather.replace();
-
-        // MOBILE MENU
-        document.getElementById("menuBtn").addEventListener("click", () => {
-            const menu = document.getElementById("mobileMenu");
-            menu.classList.toggle("hidden");
-            menu.classList.add("mobile-menu-open");
-        });
-
-        // DARK MODE TOGGLE
-        const html = document.documentElement;
-        const themeToggle = document.getElementById("themeToggle");
-        const themeIcon = document.getElementById("themeIcon");
-
-        function updateIcon() {
-            themeIcon.setAttribute("data-feather", html.classList.contains("dark") ? "sun" : "moon");
-            feather.replace();
-        }
-        updateIcon();
-        themeToggle.addEventListener("click", () => {
-            html.classList.toggle("dark");
-            localStorage.theme = html.classList.contains("dark") ? "dark" : "light";
-            updateIcon();
-        });
-
-        // TYPING EFFECT
-        const texts = ["Frontend Web Developer", "UI/UX Web Designer", "Backend Web Developer", "Fullstack Web Developer"];
-        let index = 0,
-            charIndex = 0;
-        const typedText = document.getElementById("typedText");
-        const cursor = document.getElementById("cursor");
-
-        function type() {
-            if (charIndex < texts[index].length) {
-                typedText.textContent += texts[index][charIndex++];
-                setTimeout(type, 90);
-            } else setTimeout(erase, 1500);
-        }
-
-        function erase() {
-            if (charIndex > 0) {
-                typedText.textContent = texts[index].substring(0, --charIndex);
-                setTimeout(erase, 60);
-            } else {
-                index = (index + 1) % texts.length;
-                setTimeout(type, 500);
-            }
-        }
-        setInterval(() => cursor.classList.toggle("opacity-0"), 500);
-        document.addEventListener("DOMContentLoaded", () => type());
-
-        // SCROLL TO TOP BUTTON
-        const toTop = document.getElementById("toTop");
-        window.addEventListener("scroll", () => {
-            toTop.style.display = window.scrollY > 500 ? "flex" : "none";
-        });
-        toTop.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // INIT AOS
-        AOS.init({
-            once: true,
-            duration: 800
-        });
-    </script>
-
-</body>
-
-</html>
+    @include('components.scripts')
+@endsection
