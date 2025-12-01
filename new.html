@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daffa – Portfolio</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- TAILWIND CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#0f172a',
+                        darkCard: '#1e293b',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FEATHER ICONS -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- AOS ANIMATION -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <style>
+        /* smooth darkmode transition */
+        * {
+            transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-gray-50 text-gray-900 antialiased dark:bg-dark dark:text-gray-100 transition-colors duration-300 selection:bg-blue-500 selection:text-white">
+
+    <!-- HEADER -->
+    <header
+        class="bg-white/80 dark:bg-dark/80 backdrop-blur-lg fixed top-0 left-0 w-full z-50 border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <h1
+                class="text-xl font-bold tracking-wide bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Daffa Setya Nugraha</h1>
+
+            <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <li><a href="#hero" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Home</a></li>
+                <li><a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition">About</a></li>
+                <li><a href="#skills" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Skills</a></li>
+                <li><a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Projects</a>
+                </li>
+                <li><a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Contact</a></li>
+            </ul>
+
+            <div class="flex items-center gap-4">
+                <!-- Dark Mode Toggle -->
+                <button id="themeToggle"
+                    class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-600 dark:text-gray-300">
+                    <i data-feather="moon" class="w-5 h-5 hidden dark:block"></i>
+                    <i data-feather="sun" class="w-5 h-5 block dark:hidden"></i>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn"
+                    class="md:hidden p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition text-gray-600 dark:text-gray-300">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Nav -->
+        <div id="mobileMenu" class="hidden bg-white dark:bg-dark border-t dark:border-gray-800 shadow-lg md:hidden">
+            <ul class="flex flex-col py-4 px-6 space-y-4 font-medium">
+                <li><a href="#hero" class="block hover:text-blue-600 dark:hover:text-blue-400">Home</a></li>
+                <li><a href="#about" class="block hover:text-blue-600 dark:hover:text-blue-400">About</a></li>
+                <li><a href="#skills" class="block hover:text-blue-600 dark:hover:text-blue-400">Skills</a></li>
+                <li><a href="#projects" class="block hover:text-blue-600 dark:hover:text-blue-400">Projects</a></li>
+                <li><a href="#contact" class="block hover:text-blue-600 dark:hover:text-blue-400">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="pt-24 overflow-hidden">
+
+        <!-- HERO -->
+        <section id="hero" class="relative max-w-7xl mx-auto px-6 py-32 grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Background Blobs -->
+            <div class="absolute top-0 left-0 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl -z-10 animate-pulse"></div>
+            <div
+                class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl -z-10 animate-pulse delay-1000">
+            </div>
+
+            <div data-aos="fade-up">
+                <span
+                    class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 text-sm font-medium mb-4">
+                    👋 Welcome to my portfolio
+                </span>
+                <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
+                    Hi, I'm <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">Daffa
+                        Setya</span>
+                </h1>
+
+                <h2
+                    class="text-2xl lg:text-3xl font-semibold mt-4 text-gray-800 dark:text-gray-200 flex items-center gap-2">
+                    <span id="typedText" class="text-blue-600 dark:text-blue-400"></span>
+                    <span id="cursor" class="text-blue-600 dark:text-blue-400 font-bold">|</span>
+                </h2>
+
+                <p class="text-gray-600 dark:text-gray-400 mt-6 text-lg leading-relaxed max-w-lg">
+                    Membuat desain antarmuka intuitif, responsif, dan modern, serta membangun pengalaman web yang cepat
+                    dan elegan.
+                </p>
+
+                <div class="mt-10 flex gap-4">
+                    <a href="#projects"
+                        class="px-8 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 shadow-lg shadow-blue-600/30 transition transform hover:-translate-y-1">
+                        Lihat Project
+                    </a>
+                    <a href="#contact"
+                        class="px-8 py-3 border border-gray-300 dark:border-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition transform hover:-translate-y-1">
+                        Hubungi Saya
+                    </a>
+                </div>
+            </div>
+
+            <div data-aos="zoom-in" class="flex justify-center relative">
+                <div
+                    class="absolute inset-0 bg-gradient-to-tr from-blue-600 to-purple-600 rounded-3xl blur-2xl opacity-20 -z-10">
+                </div>
+                <img src="https://dummyimage.com/450x450/ddd/000&text=Daffa+Portfolio"
+                    class="rounded-3xl shadow-2xl rotate-3 hover:rotate-0 transition duration-500">
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="max-w-7xl mx-auto px-6 py-20">
+            <h2 class="text-3xl font-bold mb-6">Tentang Saya</h2>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg max-w-3xl">
+                Saya Daffa Setya Nugraha, seorang pengembang frontend dan desainer UI/UX
+                yang berfokus menciptakan antarmuka responsif, bersih, dan profesional.
+            </p>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="max-w-7xl mx-auto px-6 py-20">
+            <h2 class="text-3xl font-bold mb-10">Keahlian</h2>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="p-8 bg-white dark:bg-darkCard rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-gray-100 dark:border-gray-800 group"
+                    data-aos="fade-up">
+                    <div
+                        class="w-14 h-14 bg-blue-50 dark:bg-blue-900/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                        <i data-feather="monitor" class="w-7 h-7 text-blue-600 dark:text-blue-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Frontend Development</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        HTML, CSS, Tailwind, JavaScript, React.
+                    </p>
+                </div>
+
+                <div class="p-8 bg-white dark:bg-darkCard rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-gray-100 dark:border-gray-800 group"
+                    data-aos="fade-up" data-aos-delay="150">
+                    <div
+                        class="w-14 h-14 bg-purple-50 dark:bg-purple-900/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                        <i data-feather="layout" class="w-7 h-7 text-purple-600 dark:text-purple-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">UI/UX Design</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        Figma, Wireframing, Prototyping, User Flow.
+                    </p>
+                </div>
+
+                <div class="p-8 bg-white dark:bg-darkCard rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-gray-100 dark:border-gray-800 group"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-14 h-14 bg-green-50 dark:bg-green-900/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                        <i data-feather="server" class="w-7 h-7 text-green-600 dark:text-green-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Backend Basic</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        Laravel, REST API, Database Design.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="max-w-7xl mx-auto px-6 py-20">
+            <h2 class="text-3xl font-bold mb-10">Project Terbaru</h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="bg-white dark:bg-darkCard rounded-2xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden group border border-gray-100 dark:border-gray-800"
+                    data-aos="zoom-in">
+                    <div class="overflow-hidden">
+                        <img src="https://dummyimage.com/600x400/e5e5e5/000"
+                            class="w-full h-48 object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 group-hover:text-blue-600 transition">Sistem Permohonan Cuti
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Project Diskominfo Mojokerto.</p>
+                        <a href="#"
+                            class="inline-flex items-center gap-2 mt-4 text-blue-600 dark:text-blue-400 font-medium hover:underline">
+                            View Details <i data-feather="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-darkCard rounded-2xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden group border border-gray-100 dark:border-gray-800"
+                    data-aos="zoom-in" data-aos-delay="150">
+                    <div class="overflow-hidden">
+                        <img src="https://dummyimage.com/600x400/e5e5e5/000"
+                            class="w-full h-48 object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 group-hover:text-blue-600 transition">Landing Page Coffee</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Tema dark mode dengan animasi smooth.</p>
+                        <a href="#"
+                            class="inline-flex items-center gap-2 mt-4 text-blue-600 dark:text-blue-400 font-medium hover:underline">
+                            View Details <i data-feather="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-darkCard rounded-2xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden group border border-gray-100 dark:border-gray-800"
+                    data-aos="zoom-in" data-aos-delay="300">
+                    <div class="overflow-hidden">
+                        <img src="https://dummyimage.com/600x400/e5e5e5/000"
+                            class="w-full h-48 object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 group-hover:text-blue-600 transition">Web Undangan Digital
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Produk digital UMKM.</p>
+                        <a href="#"
+                            class="inline-flex items-center gap-2 mt-4 text-blue-600 dark:text-blue-400 font-medium hover:underline">
+                            View Details <i data-feather="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="max-w-7xl mx-auto px-6 py-20">
+            <h2 class="text-3xl font-bold mb-6">Hubungi Saya</h2>
+
+            <form class="max-w-xl space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <input type="text" placeholder="Nama"
+                        class="w-full p-4 bg-white dark:bg-darkCard border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition dark:text-white">
+                    <input type="email" placeholder="Email"
+                        class="w-full p-4 bg-white dark:bg-darkCard border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition dark:text-white">
+                </div>
+                <textarea placeholder="Pesan"
+                    class="w-full p-4 bg-white dark:bg-darkCard border border-gray-200 dark:border-gray-700 rounded-xl h-32 focus:ring-2 focus:ring-blue-500 outline-none transition resize-none dark:text-white"></textarea>
+
+                <button
+                    class="w-full md:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/30 transition transform hover:-translate-y-0.5">
+                    Kirim Pesan
+                </button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-20 py-10 bg-white dark:bg-darkCard border-t border-gray-200 dark:border-gray-800 text-center">
+        <p class="text-sm text-gray-600 dark:text-gray-400">© 2025 Daffa Setya Nugraha. All rights reserved.</p>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        feather.replace();
+
+        // DARK MODE TOGGLE
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+
+        // Check local storage
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            if (html.classList.contains('dark')) {
+                localStorage.theme = 'dark';
+            } else {
+                localStorage.theme = 'light';
+            }
+        });
+
+        // MOBILE MENU
+        document.getElementById("menuBtn").addEventListener("click", () => {
+            document.getElementById("mobileMenu").classList.toggle("hidden");
+        });
+
+        // TYPING EFFECT
+        const texts = ["Frontend Web Developer", "UI/UX Web Designer", "Backend Web Developer", "Fullstack Web Developer"];
+        let index = 0, charIndex = 0;
+        const typedText = document.getElementById("typedText");
+        const cursor = document.getElementById("cursor");
+
+        function type() {
+            if (charIndex < texts[index].length) {
+                typedText.textContent += texts[index][charIndex++];
+                setTimeout(type, 90);
+            } else setTimeout(erase, 1500);
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                typedText.textContent = texts[index].substring(0, --charIndex);
+                setTimeout(erase, 60);
+            } else {
+                index = (index + 1) % texts.length;
+                setTimeout(type, 500);
+            }
+        }
+
+        setInterval(() => cursor.classList.toggle("opacity-0"), 500);
+        document.addEventListener("DOMContentLoaded", () => type());
+    </script>
+
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+
+</html>
