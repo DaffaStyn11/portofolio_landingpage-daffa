@@ -117,60 +117,105 @@
         // });
 
         // TOGGLE SHOW MORE/LESS PROJECTS
-                        document.addEventListener('DOMContentLoaded', function() {
-                    const toggleBtn = document.getElementById('toggleProjectsBtn');
-                    const btnText = document.getElementById('btnText');
-                    const btnIcon = document.getElementById('btnIcon');
-                    const hiddenProjects = document.querySelectorAll('.project-hidden');
-                    let isExpanded = false;
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleBtn = document.getElementById('toggleProjectsBtn');
+            const btnText = document.getElementById('btnText');
+            const btnIcon = document.getElementById('btnIcon');
+            const hiddenProjects = document.querySelectorAll('.project-hidden');
+            let isExpanded = false;
 
-                    toggleBtn.addEventListener('click', function() {
-                        isExpanded = !isExpanded;
+            toggleBtn.addEventListener('click', function() {
+                isExpanded = !isExpanded;
 
-                        if (isExpanded) {
-                            // Show all projects
-                            hiddenProjects.forEach((project, index) => {
-                                setTimeout(() => {
-                                    project.classList.remove('hidden');
-                                    // Trigger reflow
-                                    void project.offsetWidth;
-                                    project.classList.remove('opacity-0');
-                                    project.classList.add('opacity-100');
-                                }, index * 100); // Stagger animation
-                            });
-
-                            // Update button
-                            btnText.textContent = 'Tampilkan Sedikit';
-                            btnIcon.setAttribute('data-feather', 'chevron-up');
-                            feather.replace();
-                        } else {
-                            // Hide projects
-                            hiddenProjects.forEach((project) => {
-                                project.classList.remove('opacity-100');
-                                project.classList.add('opacity-0');
-                            });
-
-                            // Wait for fade out animation before hiding
-                            setTimeout(() => {
-                                hiddenProjects.forEach((project) => {
-                                    project.classList.add('hidden');
-                                });
-
-                                // Smooth scroll to projects section
-                                document.getElementById('projects').scrollIntoView({
-                                    behavior: 'smooth',
-                                    block: 'start'
-                                });
-                            }, 300);
-
-                            // Update button
-                            btnText.textContent = 'Lihat Semua';
-                            btnIcon.setAttribute('data-feather', 'chevron-down');
-                            feather.replace();
-                        }
-
-                        // Rotate icon
-                        btnIcon.style.transform = isExpanded ? 'rotate(180deg)' : 'rotate(0deg)';
+                if (isExpanded) {
+                    // Show all projects
+                    hiddenProjects.forEach((project, index) => {
+                        setTimeout(() => {
+                            project.classList.remove('hidden');
+                            // Trigger reflow
+                            void project.offsetWidth;
+                            project.classList.remove('opacity-0');
+                            project.classList.add('opacity-100');
+                        }, index * 100); // Stagger animation
                     });
+
+                    // Update button
+                    btnText.textContent = 'Tampilkan Sedikit';
+                    btnIcon.setAttribute('data-feather', 'chevron-up');
+                    feather.replace();
+                } else {
+                    // Hide projects
+                    hiddenProjects.forEach((project) => {
+                        project.classList.remove('opacity-100');
+                        project.classList.add('opacity-0');
+                    });
+
+                    // Wait for fade out animation before hiding
+                    setTimeout(() => {
+                        hiddenProjects.forEach((project) => {
+                            project.classList.add('hidden');
+                        });
+
+                        // Smooth scroll to projects section
+                        document.getElementById('projects').scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }, 300);
+
+                    // Update button
+                    btnText.textContent = 'Lihat Semua';
+                    btnIcon.setAttribute('data-feather', 'chevron-down');
+                    feather.replace();
+                }
+
+                // Rotate icon
+                btnIcon.style.transform = isExpanded ? 'rotate(180deg)' : 'rotate(0deg)';
+            });
+        });
+
+        // IMAGE MODAL FUNCTIONS
+        function openImageModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+
+            modalImage.src = imageSrc;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+
+            // Prevent body scroll when modal is open
+            document.body.style.overflow = 'hidden';
+
+            // Re-initialize feather icons for the modal
+            feather.replace();
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+
+            // Re-enable body scroll
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside the image
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('imageModal');
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        closeImageModal();
+                    }
                 });
+            }
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeImageModal();
+                }
+            });
+        });
     </script>

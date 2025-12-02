@@ -67,22 +67,66 @@
                             data-feather="instagram"></i></a>
                 </div>
             </div>
-
+            {{-- 
             <div data-aos="zoom-out" class="flex justify-center relative">
                 <div
                     class="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-purple-600/20 rounded-full blur-3xl -z-10">
                 </div>
-                <img src="https://dummyimage.com/500x500/ddd/000&text=Daffa+Portfolio"
+                <img src="{{ asset('images/projects/fotoprofile.png') }}" alt="Daffa Setya Nugraha - Portfolio"
                     class="rounded-[2rem] shadow-2xl border-4 border-white dark:border-gray-800 rotate-3 hover:rotate-0 transition-all duration-500">
+            </div> --}}
+            <div class="relative flex justify-center items-center">
+
+                <!-- Glow belakang -->
+                <div class="absolute inset-0 -z-10 pointer-events-none">
+                    <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+                    w-[480px] h-[480px] bg-blue-500/20 dark:bg-blue-600/20 
+                    blur-[120px] rounded-full animate-pulse">
+                    </div>
+                </div>
+
+                <!-- ATOM ORBIT ANIMATION -->
+                <div class="relative w-[260px] h-[260px]">
+
+                    <!-- Orbit 1 -->
+                    <div class="orbit orbit-1"></div>
+
+                    <!-- Orbit 2 -->
+                    <div class="orbit orbit-2"></div>
+
+                    <!-- Orbit 3 -->
+                    <div class="orbit orbit-3"></div>
+
+                    <!-- Nucleus / Inti -->
+                    <div
+                        class="absolute w-6 h-6 bg-blue-500 dark:bg-blue-400 rounded-full 
+                    top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 shadow-md shadow-blue-500/40">
+                    </div>
+
+                </div>
+
             </div>
+
+
+
+
+
         </section>
 
         <!-- ABOUT -->
         <section id="about" class="max-w-7xl mx-auto px-6 py-24">
             <div class="flex flex-col md:flex-row gap-12 items-center">
-                <div class="md:w-1/2" data-aos="fade-right">
-                    <img src="https://dummyimage.com/600x400/e5e5e5/000"
+                {{-- <div class="md:w-1/2" data-aos="fade-right">
+                    <img src="{{ asset('images/projects/fotoprofile.png') }}"
                         class="rounded-2xl shadow-lg w-full object-cover h-[400px]">
+                </div> --}}
+                <div data-aos="zoom-out" class="flex justify-center relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-purple-600/20 rounded-full blur-3xl -z-10">
+                    </div>
+                    <img src="{{ asset('images/projects/fotoprofile.png') }}" alt="Daffa Setya Nugraha - Portfolio"
+                        class="rounded-[2rem] shadow-2xl border-4 border-white dark:border-gray-800 rotate-3 hover:rotate-0 transition-all duration-500">
                 </div>
                 <div class="md:w-1/2" data-aos="fade-left">
                     <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
@@ -96,7 +140,7 @@
                     </p>
                     <div class="grid grid-cols-2 gap-6">
                         <div>
-                            <h4 class="font-bold text-2xl text-blue-600 dark:text-blue-400">2+</h4>
+                            <h4 class="font-bold text-2xl text-blue-600 dark:text-blue-400">1</h4>
                             <p class="text-sm text-gray-600 dark:text-gray-400">Years Experience</p>
                         </div>
                         <div>
@@ -300,17 +344,19 @@
 
             <!-- Projects Grid -->
             <div id="projectsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
+                <!-- Permohonan Cuti -->
                 <div class="project-item group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800"
                     data-aos="fade-up">
-                    <div class="relative overflow-hidden h-56">
-                        <img src="https://dummyimage.com/600x400/e5e5e5/000"
+                    <div class="relative overflow-hidden h-56 cursor-pointer"
+                        onclick="openImageModal('https://dummyimage.com/600x400/e5e5e5/000')">
+                        <img src="https://dummyimage.com/600x400/e5e5e5/000" alt="Sistem Permohonan Cuti"
                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                         <div
                             class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <a href="#"
-                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Lihat
-                                Detail</a>
+                            <button
+                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <i data-feather="zoom-in" class="w-4 h-4 inline mr-2"></i>Lihat Detail
+                            </button>
                         </div>
                     </div>
                     <div class="p-6">
@@ -340,17 +386,19 @@
                     </div>
                 </div>
 
-                <!-- Project 2 -->
+                <!-- Coffee Shop -->
                 <div class="project-item group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800"
                     data-aos="fade-up" data-aos-delay="150">
-                    <div class="relative overflow-hidden h-56">
-                        <img src="https://dummyimage.com/600x400/e5e5e5/000"
+                    <div class="relative overflow-hidden h-56 cursor-pointer"
+                        onclick="openImageModal('{{ asset('images/projects/CoffeeShop.png') }}')">
+                        <img src="{{ asset('images/projects/CoffeeShop.png') }}" alt="Landing Page Coffee"
                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                         <div
                             class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <a href="#"
-                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Lihat
-                                Detail</a>
+                            <button
+                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <i data-feather="zoom-in" class="w-4 h-4 inline mr-2"></i>Lihat Detail
+                            </button>
                         </div>
                     </div>
                     <div class="p-6">
@@ -373,17 +421,19 @@
                     </div>
                 </div>
 
-                <!-- Project 3 -->
+                <!-- Web Undangan Digital -->
                 <div class="project-item group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800"
                     data-aos="fade-up" data-aos-delay="300">
-                    <div class="relative overflow-hidden h-56">
-                        <img src="https://dummyimage.com/600x400/e5e5e5/000"
+                    <div class="relative overflow-hidden h-56 cursor-pointer"
+                        onclick="openImageModal('https://dummyimage.com/600x400/e5e5e5/000')">
+                        <img src="https://dummyimage.com/600x400/e5e5e5/000" alt="Web Undangan Digital"
                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                         <div
                             class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <a href="#"
-                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Lihat
-                                Detail</a>
+                            <button
+                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <i data-feather="zoom-in" class="w-4 h-4 inline mr-2"></i>Lihat Detail
+                            </button>
                         </div>
                     </div>
                     <div class="p-6">
@@ -401,17 +451,19 @@
                     </div>
                 </div>
 
-                <!-- Project 4 - Hidden by default -->
+                <!-- Dental Care -->
                 <div
                     class="project-item project-hidden hidden opacity-0 group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800">
-                    <div class="relative overflow-hidden h-56">
-                        <img src="https://dummyimage.com/600x400/e5e5e5/000"
+                    <div class="relative overflow-hidden h-56 cursor-pointer"
+                        onclick="openImageModal('{{ asset('images/projects/DentalCare.png') }}')">
+                        <img src="{{ asset('images/projects/DentalCare.png') }}" alt="Landing Page Dental Care"
                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                         <div
                             class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <a href="#"
-                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Lihat
-                                Detail</a>
+                            <button
+                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <i data-feather="zoom-in" class="w-4 h-4 inline mr-2"></i>Lihat Detail
+                            </button>
                         </div>
                     </div>
                     <div class="p-6">
@@ -434,17 +486,19 @@
                     </div>
                 </div>
 
-                <!-- Project 5 - Hidden by default -->
+                <!-- Restaurant  -->
                 <div
                     class="project-item project-hidden hidden opacity-0 group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800">
-                    <div class="relative overflow-hidden h-56">
-                        <img src="https://dummyimage.com/600x400/e5e5e5/000"
+                    <div class="relative overflow-hidden h-56 cursor-pointer"
+                        onclick="openImageModal('{{ asset('images/projects/Restaurant.png') }}')">
+                        <img src="{{ asset('images/projects/Restaurant.png') }}" alt="Landing Page Restaurant"
                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                         <div
                             class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <a href="#"
-                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Lihat
-                                Detail</a>
+                            <button
+                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <i data-feather="zoom-in" class="w-4 h-4 inline mr-2"></i>Lihat Detail
+                            </button>
                         </div>
                     </div>
                     <div class="p-6">
@@ -467,27 +521,25 @@
                     </div>
                 </div>
 
-                <!-- Project 6 - Hidden by default -->
+                <!-- Eyes's -->
                 <div
                     class="project-item project-hidden hidden opacity-0 group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800">
-                    <div class="relative overflow-hidden h-56">
-                        {{-- <img src="https://dummyimage.com/600x400/e5e5e5/000"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"> --}}
-                            <img
-            src="{{ asset('images/projects/Dokter Mata.png') }}"
-            alt="Dokter Mata"
-            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="relative overflow-hidden h-56 cursor-pointer"
+                        onclick="openImageModal('{{ asset('images/projects/EyesCare.png') }}')">
+                        <img src="{{ asset('images/projects/EyesCare.png') }}" alt="Landing Page Eyes's Care"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                         <div
                             class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <a href="#"
-                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Lihat
-                                Detail</a>
+                            <button
+                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <i data-feather="zoom-in" class="w-4 h-4 inline mr-2"></i>Lihat Detail
+                            </button>
                         </div>
                     </div>
                     <div class="p-6">
                         <h3
                             class="text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                            Landing Page Eyes Care</h3>
+                            Landing Page Eyes's Care</h3>
                         <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Desain landing page untuk
                             klinik perawatan mata yang menonjolkan layanan kesehatan visual secara informatif dan modern.
                         </p>
@@ -505,17 +557,19 @@
                     </div>
                 </div>
 
-                <!-- Project 7 - Hidden by default -->
+                <!-- Managemen Telur -->
                 <div
                     class="project-item project-hidden hidden opacity-0 group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800">
-                    <div class="relative overflow-hidden h-56">
-                        <img src="https://dummyimage.com/600x400/e5e5e5/000"
+                    <div class="relative overflow-hidden h-56 cursor-pointer"
+                        onclick="openImageModal('https://dummyimage.com/600x400/e5e5e5/000')">
+                        <img src="https://dummyimage.com/600x400/e5e5e5/000" alt="Managemen Telur"
                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                         <div
                             class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <a href="#"
-                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Lihat
-                                Detail</a>
+                            <button
+                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <i data-feather="zoom-in" class="w-4 h-4 inline mr-2"></i>Lihat Detail
+                            </button>
                         </div>
                     </div>
                     <div class="p-6">
@@ -543,17 +597,19 @@
                     </div>
                 </div>
 
-                <!-- Project 8 - Hidden by default -->
+                <!-- Real Estate -->
                 <div
                     class="project-item project-hidden hidden opacity-0 group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800">
-                    <div class="relative overflow-hidden h-56">
-                        <img src="https://dummyimage.com/600x400/e5e5e5/000"
+                    <div class="relative overflow-hidden h-56 cursor-pointer"
+                        onclick="openImageModal('{{ asset('images/projects/RealEstate.png') }}')">
+                        <img src="{{ asset('images/projects/RealEstate.png') }}" alt="Landing Page Real Estate"
                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                         <div
                             class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <a href="#"
-                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Lihat
-                                Detail</a>
+                            <button
+                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <i data-feather="zoom-in" class="w-4 h-4 inline mr-2"></i>Lihat Detail
+                            </button>
                         </div>
                     </div>
                     <div class="p-6">
@@ -576,17 +632,19 @@
                     </div>
                 </div>
 
-                <!-- Project 9 - Hidden by default -->
+                <!-- Portofolio -->
                 <div
                     class="project-item project-hidden hidden opacity-0 group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800">
-                    <div class="relative overflow-hidden h-56">
-                        <img src="https://dummyimage.com/600x400/e5e5e5/000"
+                    <div class="relative overflow-hidden h-56 cursor-pointer"
+                        onclick="openImageModal('https://dummyimage.com/600x400/e5e5e5/000')">
+                        <img src="https://dummyimage.com/600x400/e5e5e5/000" alt="Landing Page Portofolio"
                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                         <div
                             class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <a href="#"
-                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Lihat
-                                Detail</a>
+                            <button
+                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <i data-feather="zoom-in" class="w-4 h-4 inline mr-2"></i>Lihat Detail
+                            </button>
                         </div>
                     </div>
                     <div class="p-6">
@@ -606,6 +664,25 @@
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Tailwind</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Modal -->
+            <div id="imageModal"
+                class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4 backdrop-blur-sm">
+                <div class="relative max-w-7xl max-h-[90vh] w-full">
+                    <!-- Close Button -->
+                    <button onclick="closeImageModal()"
+                        class="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors duration-300 flex items-center gap-2 bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg">
+                        <i data-feather="x" class="w-6 h-6"></i>
+                        <span class="font-semibold">Tutup</span>
+                    </button>
+
+                    <!-- Image Container -->
+                    <div class="flex items-center justify-center">
+                        <img id="modalImage" src="" alt="Project Preview"
+                            class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl animate-fadeIn">
                     </div>
                 </div>
             </div>
@@ -631,39 +708,108 @@
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <div class="p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:border dark:border-gray-800 flex items-center gap-4"
+                <div class="p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:border dark:border-gray-800 flex items-center gap-4 cursor-pointer group hover:-translate-y-2"
                     data-aos="fade-up">
-                    <div class="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-blue-600 dark:text-blue-400">
+                    <div
+                        class="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform duration-300">
                         <i data-feather="award" class="w-6 h-6"></i>
                     </div>
                     <div>
-                        <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100">Dicoding – Frontend</h3>
-                        <p class="text-gray-500 dark:text-gray-400 text-sm">2024 • Kompeten</p>
+                        <h3
+                            class="text-lg font-bold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                            Hitaclass – Frontend Web Developer
+                        </h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm">2025 • Basic</p>
                     </div>
                 </div>
 
-                <div class="p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:border dark:border-gray-800 flex items-center gap-4"
+                <div class="p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:border dark:border-gray-800 flex items-center gap-4 cursor-pointer group hover:-translate-y-2"
                     data-aos="fade-up" data-aos-delay="150">
-                    <div class="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-lg text-purple-600 dark:text-purple-400">
+                    <div
+                        class="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-lg text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform duration-300">
                         <i data-feather="award" class="w-6 h-6"></i>
                     </div>
                     <div>
-                        <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100">Figma UI/UX Mastery</h3>
-                        <p class="text-gray-500 dark:text-gray-400 text-sm">2024 • Expert</p>
+                        <h3
+                            class="text-lg font-bold text-gray-800 dark:text-gray-100 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                            MySkill – Figma UI/UX Web Design
+                        </h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm">2025 • Basic</p>
                     </div>
                 </div>
 
-                <div class="p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:border dark:border-gray-800 flex items-center gap-4"
+                <div class="p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:border dark:border-gray-800 flex items-center gap-4 cursor-pointer group hover:-translate-y-2"
                     data-aos="fade-up" data-aos-delay="300">
-                    <div class="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg text-green-600 dark:text-green-400">
+                    <div
+                        class="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform duration-300">
                         <i data-feather="award" class="w-6 h-6"></i>
                     </div>
                     <div>
-                        <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100">Laravel Backend</h3>
-                        <p class="text-gray-500 dark:text-gray-400 text-sm">2023 • Basic</p>
+                        <h3
+                            class="text-lg font-bold text-gray-800 dark:text-gray-100 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
+                            MySkill – Backend</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm">2025 • Basic</p>
                     </div>
                 </div>
 
+                <div class="p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:border dark:border-gray-800 flex items-center gap-4 cursor-pointer group hover:-translate-y-2"
+                    data-aos="fade-up">
+                    <div
+                        class="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform duration-300">
+                        <i data-feather="award" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3
+                            class="text-lg font-bold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                            RevoU – Software Engineer
+                        </h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm">2025 • Basic</p>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:border dark:border-gray-800 flex items-center gap-4 cursor-pointer group hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="150">
+                    <div
+                        class="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-lg text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform duration-300">
+                        <i data-feather="award" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3
+                            class="text-lg font-bold text-gray-800 dark:text-gray-100 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                            RevoU – Data Analysis
+                        </h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm">2025 • Basic</p>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:border dark:border-gray-800 flex items-center gap-4 cursor-pointer group hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform duration-300">
+                        <i data-feather="award" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3
+                            class="text-lg font-bold text-gray-800 dark:text-gray-100 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
+                            Dicoding – Financial Literacy</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm">2025 • Basic</p>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:border dark:border-gray-800 flex items-center gap-4 cursor-pointer group hover:-translate-y-2"
+                    data-aos="fade-up">
+                    <div
+                        class="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform duration-300">
+                        <i data-feather="award" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3
+                            class="text-lg font-bold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                            RevoU – Digital Marketing
+                        </h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm">2022 • Basic</p>
+                    </div>
+                </div>
             </div>
         </section>
 
