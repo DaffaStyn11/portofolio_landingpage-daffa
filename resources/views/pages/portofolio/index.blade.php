@@ -35,7 +35,7 @@
 
                 <h2
                     class="text-2xl md:text-3xl font-semibold mt-3 flex items-center gap-2 text-gray-700 dark:text-gray-300">
-                    I am a <span id="typedText" class="text-blue-600 dark:text-blue-400">{{ $hero['title'] ?? 'Frontend Developer' }}</span>
+                    I am a <span id="typedText" class="text-blue-600 dark:text-blue-400"></span>
                     <span id="cursor" class="text-blue-600 dark:text-blue-400 font-bold">|</span>
                 </h2>
 
@@ -154,133 +154,28 @@
         <!-- SKILLS -->
         <section id="skills" class="max-w-7xl mx-auto px-6 py-24 bg-gray-50/50 dark:bg-gray-900/20">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold mb-4">{{ $skills['title'] ?? 'Keahlian Saya' }}</h2>
-                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">{{ $skills['subtitle'] ?? 'Teknologi dan tools yang saya gunakan untuk membangun aplikasi web berkualitas.' }}</p>
+                <h2 class="text-3xl font-bold mb-4">Keahlian Saya</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Teknologi dan tools yang saya gunakan untuk membangun aplikasi web berkualitas.</p>
             </div>
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-8">
-
+                @forelse($skills as $index => $skill)
                 <div class="p-8 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:backdrop-blur-sm dark:border dark:border-gray-800 group hover:-translate-y-2"
-                    data-aos="fade-up">
+                    data-aos="fade-up" data-aos-delay="{{ $index * 150 }}">
                     <div
-                        class="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <i data-feather="monitor" class="w-7 h-7 text-blue-600 dark:text-blue-400"></i>
+                        class="w-14 h-14 bg-{{ $skill->color }}-50 dark:bg-{{ $skill->color }}-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i data-feather="{{ $skill->icon }}" class="w-7 h-7 text-{{ $skill->color }}-600 dark:text-{{ $skill->color }}-400"></i>
                     </div>
                     <h3
-                        class="text-xl font-bold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                        Frontend Development</h3>
+                        class="text-xl font-bold group-hover:text-{{ $skill->color }}-600 dark:group-hover:text-{{ $skill->color }}-400 transition-colors">
+                        {{ $skill->name }}</h3>
                     <p class="text-gray-600 mt-3 text-sm leading-relaxed dark:text-gray-400">
-                        Membangun antarmuka web yang responsif dan interaktif menggunakan HTML, CSS, Tailwind, dan
-                        React/Vue.
+                        {{ $skill->description }}
                     </p>
                 </div>
-
-                <div class="p-8 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:backdrop-blur-sm dark:border dark:border-gray-800 group hover:-translate-y-2"
-                    data-aos="fade-up" data-aos-delay="150">
-                    <div
-                        class="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <i data-feather="layout" class="w-7 h-7 text-purple-600 dark:text-purple-400"></i>
-                    </div>
-                    <h3
-                        class="text-xl font-bold group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                        UI/UX Design</h3>
-                    <p class="text-gray-600 mt-3 text-sm leading-relaxed dark:text-gray-400">
-                        Merancang desain user-friendly dengan Figma, Wireframing, dan Prototyping yang fokus pada
-                        pengalaman pengguna.
-                    </p>
-                </div>
-
-                <div class="p-8 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:backdrop-blur-sm dark:border dark:border-gray-800 group hover:-translate-y-2"
-                    data-aos="fade-up" data-aos-delay="300">
-                    <div
-                        class="w-14 h-14 bg-green-50 dark:bg-green-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <i data-feather="server" class="w-7 h-7 text-green-600 dark:text-green-400"></i>
-                    </div>
-                    <h3
-                        class="text-xl font-bold group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
-                        Backend Basic</h3>
-                    <p class="text-gray-600 mt-3 text-sm leading-relaxed dark:text-gray-400">
-                        Memahami dasar backend dengan Laravel, integrasi REST API, dan perancangan database yang
-                        efisien.
-                    </p>
-                </div>
-
-                <!-- Keahlian ke-4 -->
-                <div class="p-8 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:backdrop-blur-sm dark:border dark:border-gray-800 group hover:-translate-y-2"
-                    data-aos="fade-up" data-aos-delay="450">
-                    <div
-                        class="w-14 h-14 bg-yellow-50 dark:bg-yellow-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <i data-feather="cpu" class="w-7 h-7 text-yellow-600 dark:text-yellow-400"></i>
-                    </div>
-                    <h3
-                        class="text-xl font-bold group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors">
-                        AI Trouble Solving</h3>
-                    <p class="text-gray-600 mt-3 text-sm leading-relaxed dark:text-gray-400">
-                        Menggunakan AI untuk analisis masalah, optimasi workflow, dan penyelesaian masalah kompleks
-                        dengan pendekatan cerdas.
-                    </p>
-                </div>
-                <!-- GitHub & Version Control -->
-                <div class="p-8 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:backdrop-blur-sm dark:border dark:border-gray-800 group hover:-translate-y-2"
-                    data-aos="fade-up" data-aos-delay="600">
-                    <div
-                        class="w-14 h-14 bg-gray-100 dark:bg-gray-800/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <i data-feather="github" class="w-7 h-7 text-gray-700 dark:text-gray-300"></i>
-                    </div>
-                    <h3
-                        class="text-xl font-bold group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">
-                        Git & GitHub</h3>
-                    <p class="text-gray-600 mt-3 text-sm leading-relaxed dark:text-gray-400">
-                        Mengelola version control menggunakan Git, kolaborasi melalui GitHub, branching workflow, dan
-                        deployment project.
-                    </p>
-                </div>
-
-                <!-- API Integration -->
-                <div class="p-8 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:backdrop-blur-sm dark:border dark:border-gray-800 group hover:-translate-y-2"
-                    data-aos="fade-up" data-aos-delay="750">
-                    <div
-                        class="w-14 h-14 bg-red-50 dark:bg-red-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <i data-feather="link" class="w-7 h-7 text-red-600 dark:text-red-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
-                        API Integration</h3>
-                    <p class="text-gray-600 mt-3 text-sm leading-relaxed dark:text-gray-400">
-                        Mengintegrasikan REST API, autentikasi token, dan pengelolaan data antar sistem secara aman dan
-                        efisien.
-                    </p>
-                </div>
-
-                <!-- Database Design -->
-                <div class="p-8 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:backdrop-blur-sm dark:border dark:border-gray-800 group hover:-translate-y-2"
-                    data-aos="fade-up" data-aos-delay="900">
-                    <div
-                        class="w-14 h-14 bg-indigo-50 dark:bg-indigo-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <i data-feather="database" class="w-7 h-7 text-indigo-600 dark:text-indigo-400"></i>
-                    </div>
-                    <h3
-                        class="text-xl font-bold group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                        Database Design</h3>
-                    <p class="text-gray-600 mt-3 text-sm leading-relaxed dark:text-gray-400">
-                        Merancang struktur database yang optimal, relasional, dan scalable untuk kebutuhan aplikasi modern.
-                    </p>
-                </div>
-                <!-- Problem Solving & Debugging -->
-                <div class="p-8 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:backdrop-blur-sm dark:border dark:border-gray-800 group hover:-translate-y-2"
-                    data-aos="fade-up" data-aos-delay="1200">
-                    <div
-                        class="w-14 h-14 bg-orange-50 dark:bg-orange-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <i data-feather="alert-triangle" class="w-7 h-7 text-orange-600 dark:text-orange-400"></i>
-                    </div>
-                    <h3
-                        class="text-xl font-bold group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
-                        Problem Solving & Debugging
-                    </h3>
-                    <p class="text-gray-600 mt-3 text-sm leading-relaxed dark:text-gray-400">
-                        Menganalisis error, memperbaiki bug, dan mengoptimalkan kode agar aplikasi berjalan stabil dan
-                        efisien.
-                    </p>
-                </div>
+                @empty
+                <p class="col-span-2 text-center text-gray-500">Belum ada skill.</p>
+                @endforelse
 
             </div>
         </section>
@@ -325,7 +220,7 @@
             <!-- Projects Grid -->
             <div id="projectsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($projects as $index => $project)
-                <div class="project-item {{ !$project->visible ? 'project-hidden hidden opacity-0' : '' }} group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800"
+                <div class="project-item {{ $index >= 6 ? 'project-hidden hidden' : '' }} group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800"
                     data-aos="fade-up" data-aos-delay="{{ ($index % 3) * 150 }}">
                     <div class="relative overflow-hidden h-56 cursor-pointer"
                         onclick="openImageModal('{{ $project->image ? (strpos($project->image, 'http') === 0 ? $project->image : asset($project->image)) : 'https://dummyimage.com/600x400/e5e5e5/000' }}')">
@@ -379,6 +274,7 @@
             </div>
 
             <!-- Toggle Button -->
+            @if(count($projects) > 6)
             <div class="mt-12 text-center">
                 <button id="toggleProjectsBtn"
                     class="group inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
@@ -386,6 +282,7 @@
                     <i data-feather="chevron-down" id="btnIcon" class="w-5 h-5 transition-transform duration-300"></i>
                 </button>
             </div>
+            @endif
 
             <!-- JavaScript for Toggle Functionality -->
 

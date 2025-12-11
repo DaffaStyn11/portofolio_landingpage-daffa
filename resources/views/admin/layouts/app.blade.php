@@ -26,17 +26,17 @@
                     <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Kelola Konten</p>
                 </div>
                 
-                <a href="{{ route('admin.portfolio.edit', 'hero') }}" class="flex items-center px-6 py-3 hover:bg-gray-800 {{ request()->is('admin/portfolio/hero*') ? 'bg-gray-800 border-l-4 border-blue-500' : '' }}">
+                <a href="{{ route('admin.heroes.index') }}" class="flex items-center px-6 py-3 hover:bg-gray-800 {{ request()->is('admin/heroes*') ? 'bg-gray-800 border-l-4 border-blue-500' : '' }}">
                     <i data-feather="star" class="w-5 h-5 mr-3"></i>
                     Hero
                 </a>
                 
-                <a href="{{ route('admin.portfolio.edit', 'about') }}" class="flex items-center px-6 py-3 hover:bg-gray-800 {{ request()->is('admin/portfolio/about*') ? 'bg-gray-800 border-l-4 border-blue-500' : '' }}">
+                <a href="{{ route('admin.abouts.index') }}" class="flex items-center px-6 py-3 hover:bg-gray-800 {{ request()->is('admin/abouts*') ? 'bg-gray-800 border-l-4 border-blue-500' : '' }}">
                     <i data-feather="user" class="w-5 h-5 mr-3"></i>
                     About
                 </a>
                 
-                <a href="{{ route('admin.portfolio.edit', 'skills') }}" class="flex items-center px-6 py-3 hover:bg-gray-800 {{ request()->is('admin/portfolio/skills*') ? 'bg-gray-800 border-l-4 border-blue-500' : '' }}">
+                <a href="{{ route('admin.skills.index') }}" class="flex items-center px-6 py-3 hover:bg-gray-800 {{ request()->is('admin/skills*') ? 'bg-gray-800 border-l-4 border-blue-500' : '' }}">
                     <i data-feather="code" class="w-5 h-5 mr-3"></i>
                     Skills
                 </a>

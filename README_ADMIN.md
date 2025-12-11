@@ -5,27 +5,47 @@ Buka browser dan akses: `http://localhost:8000/admin`
 
 ## Menu yang Tersedia
 
-### 1. Hero Section
-Kelola konten bagian hero (banner utama):
+### 1. Hero Section (CRUD Lengkap)
+Kelola konten bagian hero (banner utama) dengan fitur:
+- **Tambah**: Klik "Tambah Hero Baru"
+- **Edit**: Klik icon edit pada card hero
+- **Hapus**: Klik icon hapus (akan ada konfirmasi)
+
+**Fields**:
 - Welcome badge
 - Nama
 - Title/Jabatan
+- Typing Titles (animasi typing bergantian - pisahkan dengan koma)
 - Deskripsi
 - Link sosial media (GitHub, LinkedIn, Instagram)
+- Urutan
 
-### 2. About Section
-Kelola konten bagian tentang:
+### 2. About Section (CRUD Lengkap)
+Kelola konten bagian tentang dengan fitur:
+- **Tambah**: Klik "Tambah About Baru"
+- **Edit**: Klik icon edit pada card about
+- **Hapus**: Klik icon hapus (akan ada konfirmasi)
+
+**Fields**:
 - Judul section
 - Deskripsi lengkap
 - Years experience
 - Projects completed
+- Image path
+- Urutan
 
-### 3. Skills Section
-Kelola konten bagian skills:
-- Judul section
-- Subtitle
+### 3. Skills (CRUD Lengkap)
+Kelola skills dengan fitur:
+- **Tambah**: Klik "Tambah Skill Baru"
+- **Edit**: Klik tombol "Edit" pada card
+- **Hapus**: Klik tombol "Hapus" (akan ada konfirmasi)
 
-**Note**: Skill cards masih static. Jika ingin membuat dinamis, perlu modifikasi lebih lanjut.
+**Fields**:
+- Nama Skill
+- Deskripsi
+- Icon (Feather Icons - lihat di feathericons.com)
+- Warna (untuk background dan text)
+- Urutan
 
 ### 4. Experience (CRUD Lengkap)
 Kelola pengalaman kerja dengan fitur:
@@ -71,6 +91,18 @@ Kelola sertifikat dengan fitur:
 
 ## Tips Penggunaan
 
+### Typing Titles di Hero
+1. Gunakan multiple input fields (bukan comma-separated)
+2. Klik tombol "Tambah Title" untuk menambah input baru
+3. Isi setiap input dengan satu title
+4. Klik tombol X merah untuk menghapus input
+5. Contoh:
+   - Input 1: `Frontend Developer`
+   - Input 2: `UI/UX Designer`
+   - Input 3: `Backend Developer`
+6. Akan ditampilkan bergantian dengan efek typing di homepage
+7. Jika kosong, akan menggunakan default titles
+
 ### Upload Gambar Project
 1. Gambar akan disimpan di folder `public/images/projects/`
 2. Format yang didukung: JPG, PNG, GIF
@@ -97,7 +129,16 @@ Kelola sertifikat dengan fitur:
 ## Database Structure
 
 ### Tabel `portfolio_contents`
-Menyimpan konten Hero, About, Skills (format key-value)
+Menyimpan konten Hero, About (format key-value) - DEPRECATED, gunakan tabel `heroes` dan `abouts`
+
+### Tabel `heroes`
+Menyimpan data hero section
+
+### Tabel `abouts`
+Menyimpan data about section
+
+### Tabel `skills`
+Menyimpan data skills dengan icon dan warna
 
 ### Tabel `experiences`
 Menyimpan data pengalaman kerja
@@ -131,6 +172,9 @@ Untuk reset data ke default:
 ```bash
 php artisan migrate:fresh
 php artisan db:seed --class=PortfolioContentSeeder
+php artisan db:seed --class=HeroSeeder
+php artisan db:seed --class=AboutSeeder
+php artisan db:seed --class=SkillSeeder
 php artisan db:seed --class=ExperienceSeeder
 php artisan db:seed --class=ProjectSeeder
 php artisan db:seed --class=CertificateSeeder

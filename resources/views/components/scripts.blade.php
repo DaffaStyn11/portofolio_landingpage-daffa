@@ -46,7 +46,12 @@
         });
 
         // TYPING EFFECT
+        @if(isset($typingTitles) && count($typingTitles) > 0)
+        const texts = @json($typingTitles);
+        @else
         const texts = ["Frontend Web Developer", "UI/UX Web Designer", "Backend Web Developer", "Fullstack Web Developer"];
+        @endif
+        
         let index = 0,
             charIndex = 0;
         const typedText = document.getElementById("typedText");
@@ -68,8 +73,19 @@
                 setTimeout(type, 500);
             }
         }
-        setInterval(() => cursor.classList.toggle("opacity-0"), 500);
-        document.addEventListener("DOMContentLoaded", () => type());
+        
+        // Cursor blinking
+        if (cursor) {
+            setInterval(() => cursor.classList.toggle("opacity-0"), 500);
+        }
+        
+        // Start typing animation when DOM is ready
+        document.addEventListener("DOMContentLoaded", () => {
+            if (typedText) {
+                typedText.textContent = ''; // Clear any initial content
+                type();
+            }
+        });
 
         // SCROLL TO TOP BUTTON
         const toTop = document.getElementById("toTop");
@@ -119,58 +135,90 @@
         // TOGGLE SHOW MORE/LESS PROJECTS
         document.addEventListener('DOMContentLoaded', function() {
             const toggleBtn = document.getElementById('toggleProjectsBtn');
+            
+            // Only run if toggle button exists
+            if (!toggleBtn) return;
+            
             const btnText = document.getElementById('btnText');
             const btnIcon = document.getElementById('btnIcon');
             const hiddenProjects = document.querySelectorAll('.project-hidden');
             let isExpanded = false;
 
+            // Only show button if there are hidden projects
+            if (hiddenProjects.length === 0) {
+                toggleBtn.style.display = 'none';
+                return;
+            }
+
             toggleBtn.addEventListener('click', function() {
                 isExpanded = !isExpanded;
 
                 if (isExpanded) {
-                    // Show all projects
+                    // Show all projects with stagger animation
                     hiddenProjects.forEach((project, index) => {
                         setTimeout(() => {
                             project.classList.remove('hidden');
-                            // Trigger reflow
+                            // Trigger reflow for animation
                             void project.offsetWidth;
-                            project.classList.remove('opacity-0');
-                            project.classList.add('opacity-100');
+                            // Add fade-in animation
+                            project.style.opacity = '0';
+                            project.style.transform = 'translateY(20px)';
+                            
+                            setTimeout(() => {
+                                project.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                                project.style.opacity = '1';
+                                project.style.transform = 'translateY(0)';
+                            }, 50);
                         }, index * 100); // Stagger animation
                     });
 
                     // Update button
                     btnText.textContent = 'Tampilkan Sedikit';
                     btnIcon.setAttribute('data-feather', 'chevron-up');
+                    btnIcon.style.transform = 'rotate(180deg)';
                     feather.replace();
+                    
+                    // Refresh AOS for new visible items
+                    if (typeof AOS !== 'undefined') {
+                        setTimeout(() => AOS.refresh(), hiddenProjects.length * 100 + 100);
+                    }
                 } else {
-                    // Hide projects
+                    // Hide projects with fade out
                     hiddenProjects.forEach((project) => {
-                        project.classList.remove('opacity-100');
-                        project.classList.add('opacity-0');
+                        project.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                        project.style.opacity = '0';
+                        project.style.transform = 'translateY(20px)';
                     });
 
                     // Wait for fade out animation before hiding
                     setTimeout(() => {
                         hiddenProjects.forEach((project) => {
                             project.classList.add('hidden');
+                            project.style.opacity = '';
+                            project.style.transform = '';
+                            project.style.transition = '';
                         });
 
                         // Smooth scroll to projects section
-                        document.getElementById('projects').scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
+                        const projectsSection = document.getElementById('projects');
+                        if (projectsSection) {
+                            const offset = 100; // Offset from top
+                            const elementPosition = projectsSection.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
                     }, 300);
 
                     // Update button
                     btnText.textContent = 'Lihat Semua';
                     btnIcon.setAttribute('data-feather', 'chevron-down');
+                    btnIcon.style.transform = 'rotate(0deg)';
                     feather.replace();
                 }
-
-                // Rotate icon
-                btnIcon.style.transform = isExpanded ? 'rotate(180deg)' : 'rotate(0deg)';
             });
         });
 
