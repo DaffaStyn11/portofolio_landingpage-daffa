@@ -27,21 +27,20 @@
                 </div>
                 <div
                     class="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm font-semibold mb-6 animate-pulse">
-                    👋 Welcome to my portfolio
+                    {{ $hero['welcome_badge'] ?? '👋 Welcome to my portfolio' }}
                 </div>
                 <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-4">
-                    Hi, Saya <span class="gradient-text">Daffa Setya</span>
+                    Hi, Saya <span class="gradient-text">{{ $hero['name'] ?? 'Daffa Setya' }}</span>
                 </h1>
 
                 <h2
                     class="text-2xl md:text-3xl font-semibold mt-3 flex items-center gap-2 text-gray-700 dark:text-gray-300">
-                    I am a <span id="typedText" class="text-blue-600 dark:text-blue-400"></span>
+                    I am a <span id="typedText" class="text-blue-600 dark:text-blue-400">{{ $hero['title'] ?? 'Frontend Developer' }}</span>
                     <span id="cursor" class="text-blue-600 dark:text-blue-400 font-bold">|</span>
                 </h2>
 
                 <p class="text-gray-600 mt-6 text-lg dark:text-gray-400 leading-relaxed max-w-lg">
-                    Membuat desain antarmuka intuitif, responsif, dan modern, serta membangun pengalaman web yang cepat
-                    dan elegan.
+                    {{ $hero['description'] ?? 'Membuat desain antarmuka intuitif, responsif, dan modern, serta membangun pengalaman web yang cepat dan elegan.' }}
                 </p>
 
                 <div class="mt-10 flex flex-wrap gap-4">
@@ -56,15 +55,21 @@
                 </div>
 
                 <div class="mt-12 flex gap-6 text-gray-500 dark:text-gray-400">
-                    <a href="https://github.com/DaffaStyn11"
+                    @if(isset($hero['github_url']) && $hero['github_url'])
+                    <a href="{{ $hero['github_url'] }}"
                         class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"><i
                             data-feather="github"></i></a>
-                    <a href="https://www.linkedin.com/in/daffa-setya-nugraha/"
+                    @endif
+                    @if(isset($hero['linkedin_url']) && $hero['linkedin_url'])
+                    <a href="{{ $hero['linkedin_url'] }}"
                         class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"><i
                             data-feather="linkedin"></i></a>
-                    <a href="https://www.instagram.com/daffastyn/"
+                    @endif
+                    @if(isset($hero['instagram_url']) && $hero['instagram_url'])
+                    <a href="{{ $hero['instagram_url'] }}"
                         class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"><i
                             data-feather="instagram"></i></a>
+                    @endif
                 </div>
             </div>
             {{-- 
@@ -108,10 +113,6 @@
 
             </div>
 
-
-
-
-
         </section>
 
         <!-- ABOUT -->
@@ -131,20 +132,18 @@
                 <div class="md:w-1/2" data-aos="fade-left">
                     <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
                         <span class="w-10 h-1 bg-blue-600 rounded-full"></span>
-                        Tentang Saya
+                        {{ $about['title'] ?? 'Tentang Saya' }}
                     </h2>
                     <p class="text-gray-700 leading-relaxed text-lg dark:text-gray-300 mb-6">
-                        Saya Daffa Setya Nugraha, seorang pengembang frontend dan desainer UI/UX
-                        yang berfokus menciptakan antarmuka responsif, bersih, dan profesional. Saya memiliki passion
-                        yang besar dalam mengubah ide menjadi kenyataan digital yang fungsional dan estetis.
+                        {{ $about['description'] ?? 'Saya Daffa Setya Nugraha, seorang pengembang frontend dan desainer UI/UX yang berfokus menciptakan antarmuka responsif, bersih, dan profesional. Saya memiliki passion yang besar dalam mengubah ide menjadi kenyataan digital yang fungsional dan estetis.' }}
                     </p>
                     <div class="grid grid-cols-2 gap-6">
                         <div>
-                            <h4 class="font-bold text-2xl text-blue-600 dark:text-blue-400">1</h4>
+                            <h4 class="font-bold text-2xl text-blue-600 dark:text-blue-400">{{ $about['years_experience'] ?? '1' }}</h4>
                             <p class="text-sm text-gray-600 dark:text-gray-400">Years Experience</p>
                         </div>
                         <div>
-                            <h4 class="font-bold text-2xl text-blue-600 dark:text-blue-400">10+</h4>
+                            <h4 class="font-bold text-2xl text-blue-600 dark:text-blue-400">{{ $about['projects_completed'] ?? '10+' }}</h4>
                             <p class="text-sm text-gray-600 dark:text-gray-400">Projects Completed</p>
                         </div>
                     </div>
@@ -155,9 +154,8 @@
         <!-- SKILLS -->
         <section id="skills" class="max-w-7xl mx-auto px-6 py-24 bg-gray-50/50 dark:bg-gray-900/20">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold mb-4">Keahlian Saya</h2>
-                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Teknologi dan tools yang saya gunakan
-                    untuk membangun aplikasi web berkualitas.</p>
+                <h2 class="text-3xl font-bold mb-4">{{ $skills['title'] ?? 'Keahlian Saya' }}</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">{{ $skills['subtitle'] ?? 'Teknologi dan tools yang saya gunakan untuk membangun aplikasi web berkualitas.' }}</p>
             </div>
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-8">
@@ -292,43 +290,25 @@
             <h2 class="text-3xl font-bold mb-12 text-center">Pengalaman Kerja</h2>
 
             <div class="space-y-8 max-w-4xl mx-auto">
-
-                <div class="p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-blue-100 dark:bg-gray-900/50 dark:border-gray-800 dark:hover:border-blue-900/50 relative overflow-hidden"
-                    data-aos="fade-up">
-                    <div class="absolute top-0 left-0 w-1 h-full bg-blue-500"></div>
+                @forelse($experiences as $index => $exp)
+                <div class="p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-{{ $exp->color }}-100 dark:bg-gray-900/50 dark:border-gray-800 dark:hover:border-{{ $exp->color }}-900/50 relative overflow-hidden"
+                    data-aos="fade-up" data-aos-delay="{{ $index * 150 }}">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-{{ $exp->color }}-500"></div>
                     <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                        <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100">UI/UX & Frontend Internship</h3>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100">{{ $exp->position }}</h3>
                         <span
-                            class="text-sm font-medium px-3 py-1 bg-blue-100 text-blue-700 rounded-full dark:bg-blue-900/30 dark:text-blue-300 mt-2 md:mt-0 w-fit">Diskominfo
-                            Mojokerto</span>
+                            class="text-sm font-medium px-3 py-1 bg-{{ $exp->color }}-100 text-{{ $exp->color }}-700 rounded-full dark:bg-{{ $exp->color }}-900/30 dark:text-{{ $exp->color }}-300 mt-2 md:mt-0 w-fit">{{ $exp->company }}</span>
                     </div>
                     <p class="text-gray-500 dark:text-gray-400 text-sm mb-4 flex items-center gap-2">
-                        <i data-feather="calendar" class="w-4 h-4"></i> Juli 2023 – September 2023
+                        <i data-feather="calendar" class="w-4 h-4"></i> {{ $exp->period }}
                     </p>
                     <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                        Mengembangkan Sistem Permohonan Cuti dalam 2,5 bulan. Berkolaborasi dalam tim untuk merancang
-                        antarmuka pengguna (UI/UX) yang intuitif dan mengimplementasikannya ke dalam kode frontend yang
-                        responsif.
+                        {{ $exp->description }}
                     </p>
                 </div>
-
-                <div class="p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-purple-100 dark:bg-gray-900/50 dark:border-gray-800 dark:hover:border-purple-900/50 relative overflow-hidden"
-                    data-aos="fade-up" data-aos-delay="150">
-                    <div class="absolute top-0 left-0 w-1 h-full bg-purple-500"></div>
-                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                        <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100">Freelance Web Developer</h3>
-                        <span
-                            class="text-sm font-medium px-3 py-1 bg-purple-100 text-purple-700 rounded-full dark:bg-purple-900/30 dark:text-purple-300 mt-2 md:mt-0 w-fit">Self
-                            Employed</span>
-                    </div>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-4 flex items-center gap-2">
-                        <i data-feather="calendar" class="w-4 h-4"></i> Mei 2025 – Sekarang
-                    </p>
-                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                        Menyediakan jasa pembuatan website undangan digital dan landing page untuk UMKM. Fokus pada
-                        optimasi performa, SEO, dan desain yang menarik untuk meningkatkan konversi klien.
-                    </p>
-                </div>
+                @empty
+                <p class="text-center text-gray-500">Belum ada pengalaman kerja.</p>
+                @endforelse
 
             </div>
         </section>
@@ -344,12 +324,12 @@
 
             <!-- Projects Grid -->
             <div id="projectsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Permohonan Cuti -->
-                <div class="project-item group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800"
-                    data-aos="fade-up">
+                @forelse($projects as $index => $project)
+                <div class="project-item {{ !$project->visible ? 'project-hidden hidden opacity-0' : '' }} group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800"
+                    data-aos="fade-up" data-aos-delay="{{ ($index % 3) * 150 }}">
                     <div class="relative overflow-hidden h-56 cursor-pointer"
-                        onclick="openImageModal('https://dummyimage.com/600x400/e5e5e5/000')">
-                        <img src="https://dummyimage.com/600x400/e5e5e5/000" alt="Sistem Permohonan Cuti"
+                        onclick="openImageModal('{{ $project->image ? (strpos($project->image, 'http') === 0 ? $project->image : asset($project->image)) : 'https://dummyimage.com/600x400/e5e5e5/000' }}')">
+                        <img src="{{ $project->image ? (strpos($project->image, 'http') === 0 ? $project->image : asset($project->image)) : 'https://dummyimage.com/600x400/e5e5e5/000' }}" alt="{{ $project->title }}"
                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                         <div
                             class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -362,310 +342,21 @@
                     <div class="p-6">
                         <h3
                             class="text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                            Sistem Permohonan Cuti</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Aplikasi web untuk manajemen
-                            cuti pegawai dengan fitur approval berjenjang dan notifikasi realtime.</p>
+                            {{ $project->title }}</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">{{ $project->description }}</p>
                         <div class="flex flex-wrap gap-2">
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Nuxt</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Vue</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">MySQL</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Github</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Rest
-                                API</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">PHP</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Laravel
-                                Blade</span>
+                            @if($project->technologies)
+                                @foreach($project->technologies as $tech)
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">{{ $tech }}</span>
+                                @endforeach
+                            @endif
                         </div>
                     </div>
                 </div>
-
-                <!-- Coffee Shop -->
-                <div class="project-item group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800"
-                    data-aos="fade-up" data-aos-delay="150">
-                    <div class="relative overflow-hidden h-56 cursor-pointer"
-                        onclick="openImageModal('{{ asset('images/projects/CoffeeShop.png') }}')">
-                        <img src="{{ asset('images/projects/CoffeeShop.png') }}" alt="Landing Page Coffee"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div
-                            class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <button
-                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                <i data-feather="zoom-in" class="w-4 h-4 inline mr-2"></i>Lihat Detail
-                            </button>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3
-                            class="text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                            Landing Page Coffee</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Desain landing page modern
-                            untuk kedai kopi dengan tema dark mode yang elegan dan animasi interaktif.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">HTML</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">JavaScript</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Laravel
-                                Blade</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Tailwind</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Web Undangan Digital -->
-                <div class="project-item group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800"
-                    data-aos="fade-up" data-aos-delay="300">
-                    <div class="relative overflow-hidden h-56 cursor-pointer"
-                        onclick="openImageModal('https://dummyimage.com/600x400/e5e5e5/000')">
-                        <img src="https://dummyimage.com/600x400/e5e5e5/000" alt="Web Undangan Digital"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div
-                            class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <button
-                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                <i data-feather="zoom-in" class="w-4 h-4 inline mr-2"></i>Lihat Detail
-                            </button>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3
-                            class="text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                            Web Undangan Digital</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Platform pembuatan undangan
-                            digital berbasis web dengan berbagai pilihan tema dan fitur RSVP.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">WordPress</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Hostinger</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dental Care -->
-                <div
-                    class="project-item project-hidden hidden opacity-0 group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800">
-                    <div class="relative overflow-hidden h-56 cursor-pointer"
-                        onclick="openImageModal('{{ asset('images/projects/DentalCare.png') }}')">
-                        <img src="{{ asset('images/projects/DentalCare.png') }}" alt="Landing Page Dental Care"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div
-                            class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <button
-                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                <i data-feather="zoom-in" class="w-4 h-4 inline mr-2"></i>Lihat Detail
-                            </button>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3
-                            class="text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                            Landing Page Dental Care</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Landing page profesional
-                            untuk klinik gigi dengan fokus pada layanan, kepercayaan, dan tampilan modern yang bersih.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">HTML</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">JavaScript</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Laravel
-                                Blade</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Tailwind</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Restaurant  -->
-                <div
-                    class="project-item project-hidden hidden opacity-0 group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800">
-                    <div class="relative overflow-hidden h-56 cursor-pointer"
-                        onclick="openImageModal('{{ asset('images/projects/Restaurant.png') }}')">
-                        <img src="{{ asset('images/projects/Restaurant.png') }}" alt="Landing Page Restaurant"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div
-                            class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <button
-                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                <i data-feather="zoom-in" class="w-4 h-4 inline mr-2"></i>Lihat Detail
-                            </button>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3
-                            class="text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                            Landing Page Restaurant</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Halaman promosi restoran
-                            dengan nuansa elegan, menampilkan menu utama dan pengalaman makan yang menarik.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">HTML</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">JavaScript</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Laravel
-                                Blade</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Tailwind</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Eyes's -->
-                <div
-                    class="project-item project-hidden hidden opacity-0 group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800">
-                    <div class="relative overflow-hidden h-56 cursor-pointer"
-                        onclick="openImageModal('{{ asset('images/projects/EyesCare.png') }}')">
-                        <img src="{{ asset('images/projects/EyesCare.png') }}" alt="Landing Page Eyes's Care"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div
-                            class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <button
-                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                <i data-feather="zoom-in" class="w-4 h-4 inline mr-2"></i>Lihat Detail
-                            </button>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3
-                            class="text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                            Landing Page Eyes's Care</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Desain landing page untuk
-                            klinik perawatan mata yang menonjolkan layanan kesehatan visual secara informatif dan modern.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">HTML</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">JavaScript</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Laravel
-                                Blade</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Tailwind</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Managemen Telur -->
-                <div
-                    class="project-item project-hidden hidden opacity-0 group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800">
-                    <div class="relative overflow-hidden h-56 cursor-pointer"
-                        onclick="openImageModal('https://dummyimage.com/600x400/e5e5e5/000')">
-                        <img src="https://dummyimage.com/600x400/e5e5e5/000" alt="Managemen Telur"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div
-                            class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <button
-                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                <i data-feather="zoom-in" class="w-4 h-4 inline mr-2"></i>Lihat Detail
-                            </button>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3
-                            class="text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                            Managemen Telur</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Manajemen produksi telur
-                            yang memudahkan pencatatan penjualan, pengeluaran, serta laporan pembukuan otomatis.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">HTML</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">JavaScript</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Laravel
-                                Blade</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Tailwind</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">PHP</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Rest
-                                Api</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Real Estate -->
-                <div
-                    class="project-item project-hidden hidden opacity-0 group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800">
-                    <div class="relative overflow-hidden h-56 cursor-pointer"
-                        onclick="openImageModal('{{ asset('images/projects/RealEstate.png') }}')">
-                        <img src="{{ asset('images/projects/RealEstate.png') }}" alt="Landing Page Real Estate"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div
-                            class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <button
-                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                <i data-feather="zoom-in" class="w-4 h-4 inline mr-2"></i>Lihat Detail
-                            </button>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3
-                            class="text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                            Landing Page Real Estate</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Platform bisnis properti
-                            dengan tampilan premium dan informasi lokasi secara menarik.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">HTML</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">JavaScript</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Laravel
-                                Blade</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Tailwind</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portofolio -->
-                <div
-                    class="project-item project-hidden hidden opacity-0 group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-900/50 dark:border dark:border-gray-800">
-                    <div class="relative overflow-hidden h-56 cursor-pointer"
-                        onclick="openImageModal('https://dummyimage.com/600x400/e5e5e5/000')">
-                        <img src="https://dummyimage.com/600x400/e5e5e5/000" alt="Landing Page Portofolio"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div
-                            class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <button
-                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                <i data-feather="zoom-in" class="w-4 h-4 inline mr-2"></i>Lihat Detail
-                            </button>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3
-                            class="text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                            Landing Page Portofolio</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Platform modern untuk
-                            menampilkan profil, pengalaman, dan pencapaian secara profesional.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">HTML</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">JavaScript</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Laravel
-                                Blade</span>
-                            <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded-full text-gray-600 dark:text-gray-300">Tailwind</span>
-                        </div>
-                    </div>
-                </div>
+                @empty
+                <p class="col-span-3 text-center text-gray-500">Belum ada project.</p>
+                @endforelse
             </div>
 
             <!-- Image Modal -->
@@ -701,115 +392,29 @@
             @include('components.style')
 
         </section>
-
         <!-- CERTIFICATE -->
         <section id="certificate" class="max-w-7xl mx-auto px-6 py-24 bg-gray-50/50 dark:bg-gray-900/20">
             <h2 class="text-3xl font-bold mb-12 text-center">Sertifikat & Penghargaan</h2>
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
+                @forelse($certificates as $index => $cert)
                 <div class="p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:border dark:border-gray-800 flex items-center gap-4 cursor-pointer group hover:-translate-y-2"
-                    data-aos="fade-up">
+                    data-aos="fade-up" data-aos-delay="{{ ($index % 3) * 150 }}">
                     <div
-                        class="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform duration-300">
+                        class="p-3 bg-{{ $cert->color }}-100 dark:bg-{{ $cert->color }}-900/30 rounded-lg text-{{ $cert->color }}-600 dark:text-{{ $cert->color }}-400 group-hover:scale-110 transition-transform duration-300">
                         <i data-feather="award" class="w-6 h-6"></i>
                     </div>
                     <div>
                         <h3
-                            class="text-lg font-bold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                            Hitaclass – Frontend Web Developer
+                            class="text-lg font-bold text-gray-800 dark:text-gray-100 group-hover:text-{{ $cert->color }}-600 dark:group-hover:text-{{ $cert->color }}-400 transition-colors">
+                            {{ $cert->name }}
                         </h3>
-                        <p class="text-gray-500 dark:text-gray-400 text-sm">2025 • Basic</p>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm">{{ $cert->year }} • {{ $cert->level }}</p>
                     </div>
                 </div>
-
-                <div class="p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:border dark:border-gray-800 flex items-center gap-4 cursor-pointer group hover:-translate-y-2"
-                    data-aos="fade-up" data-aos-delay="150">
-                    <div
-                        class="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-lg text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform duration-300">
-                        <i data-feather="award" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <h3
-                            class="text-lg font-bold text-gray-800 dark:text-gray-100 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                            MySkill – Figma UI/UX Web Design
-                        </h3>
-                        <p class="text-gray-500 dark:text-gray-400 text-sm">2025 • Basic</p>
-                    </div>
-                </div>
-
-                <div class="p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:border dark:border-gray-800 flex items-center gap-4 cursor-pointer group hover:-translate-y-2"
-                    data-aos="fade-up" data-aos-delay="300">
-                    <div
-                        class="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform duration-300">
-                        <i data-feather="award" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <h3
-                            class="text-lg font-bold text-gray-800 dark:text-gray-100 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
-                            MySkill – Backend</h3>
-                        <p class="text-gray-500 dark:text-gray-400 text-sm">2025 • Basic</p>
-                    </div>
-                </div>
-
-                <div class="p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:border dark:border-gray-800 flex items-center gap-4 cursor-pointer group hover:-translate-y-2"
-                    data-aos="fade-up">
-                    <div
-                        class="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <i data-feather="award" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <h3
-                            class="text-lg font-bold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                            RevoU – Software Engineer
-                        </h3>
-                        <p class="text-gray-500 dark:text-gray-400 text-sm">2025 • Basic</p>
-                    </div>
-                </div>
-
-                <div class="p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:border dark:border-gray-800 flex items-center gap-4 cursor-pointer group hover:-translate-y-2"
-                    data-aos="fade-up" data-aos-delay="150">
-                    <div
-                        class="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-lg text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform duration-300">
-                        <i data-feather="award" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <h3
-                            class="text-lg font-bold text-gray-800 dark:text-gray-100 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                            RevoU – Data Analysis
-                        </h3>
-                        <p class="text-gray-500 dark:text-gray-400 text-sm">2025 • Basic</p>
-                    </div>
-                </div>
-
-                <div class="p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:border dark:border-gray-800 flex items-center gap-4 cursor-pointer group hover:-translate-y-2"
-                    data-aos="fade-up" data-aos-delay="300">
-                    <div
-                        class="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform duration-300">
-                        <i data-feather="award" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <h3
-                            class="text-lg font-bold text-gray-800 dark:text-gray-100 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
-                            Dicoding – Financial Literacy</h3>
-                        <p class="text-gray-500 dark:text-gray-400 text-sm">2025 • Basic</p>
-                    </div>
-                </div>
-
-                <div class="p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 tilt-card dark:bg-gray-900/50 dark:border dark:border-gray-800 flex items-center gap-4 cursor-pointer group hover:-translate-y-2"
-                    data-aos="fade-up">
-                    <div
-                        class="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <i data-feather="award" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <h3
-                            class="text-lg font-bold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                            RevoU – Digital Marketing
-                        </h3>
-                        <p class="text-gray-500 dark:text-gray-400 text-sm">2022 • Basic</p>
-                    </div>
-                </div>
+                @empty
+                <p class="col-span-3 text-center text-gray-500">Belum ada sertifikat.</p>
+                @endforelse
             </div>
         </section>
 

@@ -154,12 +154,49 @@
             transform: translateY(-6px) scale(1.02);
             transition: .3s ease;
         }
+
+        /* Orbit Animation */
+        .orbit {
+            position: absolute;
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .orbit-1 {
+            width: 100px;
+            height: 100px;
+            animation: spin 8s linear infinite;
+        }
+
+        .orbit-2 {
+            width: 160px;
+            height: 160px;
+            animation: spin 12s linear infinite reverse;
+        }
+
+        .orbit-3 {
+            width: 220px;
+            height: 220px;
+            animation: spin 16s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
     </style>
 </head>
 
 <body
     class="bg-gray-50 text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100 selection:bg-blue-500 selection:text-white overflow-x-hidden">
-    @yield("content")
+    @yield('content')
 </body>
 
 </html>
